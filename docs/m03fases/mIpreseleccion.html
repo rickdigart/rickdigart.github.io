@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="es" prefix="og: https://ogp.me/ns#">
+<head>
+ <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" sizes="32x32" href="/favicon.ico">
+<meta name="theme-color" content="#039623">
+<link rel="manifest" href="/site.webmanifest">
+<script src="/js/muestra-codigo.js"></script>
+ <title>I. Preselección de ideas - GilPG AD</title>
+ <meta name="description" content="Preselección de ideas.">
+ <meta name="og:image" content="https://gilpgad.github.io/img/icono/icono2048.png">
+ <style>
+ :root {
+  --padTop: 2rem;
+  --introDuracion: 2s;
+  --introFuncion: ease-out;
+  --padCont: 0.5rem;
+  --padNav: 0.75rem 0.5rem;
+  --anchoNav: 300px;
+  --anchoLectura: 900px;
+  --colLetra: black;
+  --colFondo: white;
+  --colTituloLetra: #00811c;
+  --colTituloShadow: 3px 1px 2px #bdbdbd;
+  --colTituloStrong: #684601;
+  --colTituloStrongSel: #ffdc97;
+  --colTarget: #cef4ff;
+  --colSombra: #49494980;
+  --navSombra: 0.5rem 0 0.5rem var(--colSombra);
+  --padCtrl: 0.2rem 0.3rem;
+  --borderCtrl: solid thin;
+  --colFondoNav: #f2f2f2;
+  --colNavResaltada: #7a2c99;
+  --colSecundario: #ffff82;
+  --colStack1: black;
+  --colStack2: #224ba5;
+  --colStack3: #92731f;
+  --colScrollbar: #CFD8DC;
+  --colThumb: #90a4ae;
+  --colThumbActivo: #3f3f3f;
+  --anchoThumb: 7px;
+  --borderRadiusThumb: 3.5px;
+  --gap: 0.5rem;
+  --fontMono: monospace;
+  --fontSans: sans-serif;
+  --fontSerif: serif;
+  font-family: var(--fontSerif);
+  color: var(--colLetra);
+  background-color: var(--colFondo);
+  scrollbar-width: thin;
+  scrollbar-color: var(--colThumb) var(--colScrollbar);
+ }
+
+ body::-webkit-scrollbar {
+  width: var(--anchoThumb);
+  height: var(--anchoThumb);
+ }
+
+ body::-webkit-scrollbar-track {
+  background: var(--colScrollbar);
+ }
+
+ body::-webkit-scrollbar-thumb {
+  background-color: var(--colThumb);
+  border-radius: var(--borderRadiusThumb);
+ }
+
+ body::-webkit-scrollbar-thumb:active {
+  background-color: var(--colThumbActivo);
+ }
+
+ .anterior,
+ .siguiente {
+  display: inline-block;
+  text-decoration: none;
+  padding: var(--padCtrl);
+  border: var(--borderCtrl);
+  cursor: pointer;
+ }
+
+ .anterior.bye,
+ .siguiente.bye {
+  display: none;
+ }
+
+ a[data-logo] {
+  display: block;
+  height: 54px;
+  line-height: 54px;
+  padding-left: 54px;
+  margin-top: 1rem;
+  background-image: url("/img/icono/maskable_icon_x48.png");
+  background-position: 3px center;
+  background-repeat: no-repeat;
+ }
+
+ a strong,
+ a code,
+ h1 strong,
+ h1 code {
+  color: var(--colTituloStrong);
+ }
+
+ nav a {
+  font-family: var(--fontSans);
+ }
+
+ pre {
+  font-family: var(--fontMono);
+ }
+
+ code {
+  color: var(--colTituloStrong);
+  font-family: var(--fontMono);
+ }
+
+ h1:not(.default) {
+  font-family: var(--fontSans);
+  color: var(--colTituloLetra);
+ }
+
+ .autor {
+  font-family: var(--fontSans);
+  font-size: 1.5rem;
+  color: var(--colTituloLetra);
+ }
+
+ figure {
+  text-align: center;
+ }
+
+ figure img {
+  max-width: 100%;
+  max-height: 65vh;
+ }
+
+ figure img.med {
+  max-height: 55vh;
+ }
+
+ figcaption {
+  font-family: var(--fontMono);
+ }
+
+ .print .noPrint {
+  display: none;
+ }
+
+ @media print {
+  .noPrint {
+   display: none;
+  }
+
+  .pruebaDeEscritorio {
+   page-break-before: always;
+  }
+ }
+
+ iframe {
+  box-sizing: border-box;
+  width: 100%;
+ }
+
+ .lectura {
+  max-width: var(--anchoLectura);
+  margin: 1rem auto;
+ }
+
+ .lectura p,
+ .lectura blockquote {
+  text-align: justify;
+ }
+
+ /* No funciona bien con display:flex en pantallas pequeñas. */
+ .horizontal {
+  text-align: center;
+ }
+
+ .horizontal>* {
+  display: inline-block;
+  vertical-align: top;
+  text-align: left;
+ }
+
+ .horizontal>*:not(:first-child) {
+  margin-left: 1rem;
+ }
+
+ .columnas4 {
+  columns: 4 180px;
+  column-gap: 1rem;
+ }
+
+ .columnas2 {
+  columns: 2 360px;
+  column-gap: 1rem;
+ }
+
+ .resaltado {
+  background-color: rgb(255, 255, 89);
+ }
+
+ .resaltado2 {
+  background-color: rgb(255, 214, 139);
+ }
+
+ table.borde {
+  margin-left: auto;
+  margin-right: auto;
+ }
+
+ table.borde,
+ table.borde td {
+  border: thin solid;
+  border-collapse: collapse;
+ }
+
+ table.borde th,
+ table.borde td {
+  padding: 0.4rem;
+ }
+
+ muestra-codigo>div>div {
+  white-space: nowrap;
+ }
+
+ footer {
+  margin-top: 1rem;
+  display: block;
+  text-align: center;
+  font-family: var(--fontSans);
+  font-size: small;
+ }
+</style>
+ <style>
+ body {
+  scroll-padding-top: var(--padTop);
+ }
+
+ body:not(.sinTransicion) #principal {
+  animation-timing-function: var(--introFuncion);
+  animation-duration: var(--introDuracion);
+  animation-fill-mode: forwards;
+  animation-name: aparece;
+ }
+
+ @keyframes aparece {
+  from {
+   opacity: 0;
+  }
+
+  to {
+   opacity: 1;
+  }
+ }
+
+ #principal {
+  padding-top: var(--padTop);
+  box-sizing: border-box;
+  transition: margin-left 0.7s ease-in-out;
+ }
+
+ #principal a {
+  word-wrap: break-word;
+ }
+
+ #principal>#abre {
+  position: fixed;
+  top: var(--gap);
+  left: var(--gap);
+  transition: 0.7s ease-in-out;
+ }
+
+ #principal>.anterior {
+  position: fixed;
+  top: var(--gap);
+  background-color: var(--colFondo);
+  transition: 0.7s ease-in-out;
+ }
+
+ #principal>.siguiente {
+  position: fixed;
+  top: var(--gap);
+  right: var(--gap);
+  background-color: var(--colFondo);
+  transition: 0.7s ease-in-out;
+ }
+
+ .scroll #principal>#abre,
+ .scroll #principal>.anterior,
+ .scroll #principal>.siguiente {
+  top: -10rem;
+ }
+
+ #principal h1:not(.default) {
+  text-shadow: var(--colTituloShadow);
+ }
+
+ #nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  box-sizing: border-box;
+  overflow: auto;
+  color: var(--colLetra);
+  background-color: var(--colFondoNav);
+  padding: var(--padCont);
+  transition: transform 0.7s ease-in-out;
+  scrollbar-width: thin;
+  scrollbar-color: var(--colThumb) var(--colScrollbar);
+ }
+
+ #nav::-webkit-scrollbar {
+  width: var(--anchoThumb);
+  height: var(--anchoThumb);
+ }
+
+ #nav::-webkit-scrollbar-track {
+  background: var(--colScrollbar);
+ }
+
+ #nav::-webkit-scrollbar-thumb {
+  background-color: var(--colThumb);
+  border-radius: var(--borderRadiusThumb);
+ }
+
+ #nav::-webkit-scrollbar-thumb:active {
+  background-color: var(--colThumbActivo);
+ }
+
+ #nav p {
+  margin: 0;
+ }
+
+ #nav a:not([data-logo]) {
+  display: block;
+  padding: var(--padNav);
+ }
+
+ #nav a.actual code,
+ #nav a.actual strong {
+  color: var(--colTituloStrongSel);
+ }
+
+ #nav h1 a {
+  color: var(--colTituloLetra);
+ }
+
+ #nav a.actual {
+  color: var(--colFondo);
+  background-color: var(--colNavResaltada);
+ }
+
+ #nav a.paginaAnterior,
+ #nav a.paginaSiguiente {
+  text-align: center;
+  text-decoration: none;
+  padding: var(--padCtrl);
+  border: var(--borderCtrl);
+  cursor: pointer;
+ }
+
+ @media screen and (max-width: 999px) {
+  #principal {
+   max-width: 100vw;
+  }
+
+  #cierra {
+   position: fixed;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   background-color: var(--colSombra);
+   transform: translateX(-120%);
+   transition: transform 0.7s ease-out;
+  }
+
+  #nav {
+   width: min(var(--anchoNav), 70%);
+   box-shadow: var(--navSombra);
+  }
+
+  .xmenu>#nav {
+   transform: translateX(-120%);
+  }
+
+  .menu>#cierra,
+  .menu>#nav {
+   transform: translateX(0);
+  }
+
+  #principal>.anterior {
+   left: calc(2 * var(--gap) + 2rem);
+  }
+ }
+
+ @media screen and (min-width: 1000px) {
+  #cierra {
+   display: none;
+  }
+
+  #nav {
+   width: var(--anchoNav);
+  }
+
+  .menu>#nav {
+   transform: translateX(-120%);
+  }
+
+  .xmenu>#principal {
+   margin-left: var(--anchoNav)
+  }
+
+  .menu>#principal>.anterior {
+   left: calc(2 * var(--gap) + 2rem);
+  }
+
+  .xmenu>#principal>.anterior {
+   top: var(--gap);
+   left: calc(var(--anchoNav) + var(--gap));
+  }
+
+  .xmenu.scroll #principal>.anterior {
+   top: -10rem;
+  }
+ }
+
+ @media print {
+
+  #nav,
+  #principal>#abre,
+  #principal>.anterior,
+  #principal>.siguiente {
+   display: none;
+  }
+ }
+</style>
+ 
+</head>
+<body class="xmenu">
+ <div id="principal">
+ <button id="abre" type="button" title="Menú" class="cambiaMenu">
+  &#x2630;
+ </button>
+ <a class="anterior" href="/m03fases/mHbocetaje.html" title="H. Bocetaje inicial o preliminar">◀</a>
+ <a class="siguiente" href="/m03fases/mIevolucion.html" title="J. Evolución de bocetos">▶</a>
+   <h1 >I. Preselección de ideas</h1><div class="lectura">
+ <ol>
+  <li>
+   <p>📈 Se evalúan las propuestas iniciales.</p>
+  </li>
+  <li>
+   <p>🥇 Se jerarquizan las propuestas.</p>
+  </li>
+  <li>
+   <p>🥗 Combinación de ciertos elementos de unas y otras.</p>
+  </li>
+ </ol>
+</div>
+ <footer>
+ <p>
+  <a rel="license"
+    href="http://creativecommons.org/licenses/by/4.0/"><img
+     alt="Licencia Creative Commons" style="border-width:0"
+     src="/img/icono/160x30.webp" width="80" height="15" /></a>
+  <br />Esta
+  <span xmlns:dct="http://purl.org/dc/terms/"
+    href="http://purl.org/dc/dcmitype/InteractiveResource"
+    rel="dct:type">obra</span>
+  de
+  <a xmlns:cc="http://creativecommons.org/ns#"
+    href="https://gilpgijs.github.io" property="cc:attributionName"
+    rel="cc:attributionURL">Gilberto Pacheco Gallegos</a>
+  está bajo una
+  <a rel="license"
+    href="http://creativecommons.org/licenses/by/4.0/">Licencia
+   Creative Commons Atribución 4.0 Internacional</a>.
+ </p>
+</footer>
+</div>
+<div id="cierra" class="cambiaMenu"></div>
+<nav id="nav">
+ <button type="button" title="Cierra" class="cambiaMenu">
+  &#x2715;
+ </button>
+ <p>
+    <a href="/index.html"
+      data-logo="true">GilPG AD</a>
+   </p><p>
+    <a class="paginaAnterior" href="/m02elementos/mMpsiColor.html"
+      title="M. Psicología del color">▲</a>
+   </p>
+     <h1><a href="/m03fases/index.html">3. Fases del proceso de diseño</a></h1>
+   <ol type="A">
+    <li>
+     <p>
+      <a href="/m03fases/mAfases.html">Fases del proceso de diseño gráfico - creativo</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m03fases/mBanalitica.html">Fase analítica</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m03fases/mCdefinicion.html">Definición del problema o necesidad a resolver</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m03fases/mDplan.html">Plan de acción detallado</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m03fases/mElistado.html">Listado de requerimientos</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m03fases/mFcreativa.html">Fase creativa</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m03fases/mGanalisis.html">Análisis y síntesis de datos</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m03fases/mHbocetaje.html">Bocetaje inicial o preliminar</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m03fases/mIpreseleccion.html" class="actual">Preselección de ideas</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m03fases/mIevolucion.html">Evolución de bocetos</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m03fases/mJpresentacion.html">Elaboración de la presentación</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m03fases/mKseleccion.html">Selección de alternativas</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m03fases/mLrefinado.html">Refinado</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m03fases/mMdesarrollo.html">Fase de desarrollo</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m03fases/mNvalidacion.html">Validación del diseño</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m03fases/mOrefinadoPru.html">Refinado en base a pruebas</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m03fases/mPaprobacion.html">Aprobación del diseño final</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m03fases/mQadaptacion.html">Adaptación a diversas presentaciones</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m03fases/mRpreparar.html">Preparar documentos para producción</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m03fases/mSsolucion.html">Se obtiene la solución final</a>
+     </p>
+    </li>
+   </ol><p>
+    <a class="paginaSiguiente" href="/m04composicion.html"
+      title="4. Composición">▼</a>
+   </p>
+</nav>
+ <script>
+ registraServiceWorker("/sw.js")
+ const LOCAL_STORAGE_MENU = "menu"
+ const MENU = "menu"
+ const XMENU = "xmenu"
+ const SCROLL = "scroll"
+ const nav = document.querySelector("#nav")
+ const abre = document.querySelector("#abre")
+
+ /**@type {string} */
+ let urlAnterior = "/m03fases/mHbocetaje.html"
+ /**@type {string} */
+ let urlSiguiente = "/m03fases/mIevolucion.html"
+ /**@type {number|null} */
+ let iniciaX = null
+ /**@type {number|null} */
+ let iniciaY = null
+ /** @type {number} */
+ let posY = 0
+ /** @type {number} */
+ let dy = 0
+ /** @type {boolean} */
+  let scrolling = false
+
+ document.addEventListener("keydown", teclas)
+ document.addEventListener("touchstart", iniciaTouch)
+ document.addEventListener("touchmove", desplazaTouch)
+ addEventListener("scroll", onScroll)
+ if (abre) {
+  abre.addEventListener("click", cambiaMenu)
+ }
+ const cambian = Array.from(document.querySelectorAll(".cambiaMenu"))
+ for (const c of cambian) {
+  c.addEventListener("click", cambiaMenu)
+ }
+ const menu = localStorage.getItem(LOCAL_STORAGE_MENU)
+ if (menu) {
+  if (menu === MENU) {
+   document.body.classList.remove(XMENU)
+   document.body.classList.add(MENU)
+  } else {
+   document.body.classList.remove(MENU)
+   document.body.classList.add(XMENU)
+  }
+ }
+
+ function registraServiceWorker(url) {
+  if (navigator.serviceWorker) {
+   navigator.serviceWorker.register(url).
+    then(registro => {
+     console.log("Service Worker registrado.")
+     console.log(registro)
+    }).
+    catch(muestraError)
+  }
+ }
+ function muestraError(e) {
+  console.error(e)
+  alert(e.message)
+ }
+ function cambiaMenu() {
+  document.body.classList.toggle(XMENU)
+  document.body.classList.toggle(MENU)
+  if (document.body.classList.contains(MENU)) {
+   localStorage.setItem(LOCAL_STORAGE_MENU, MENU)
+  } else {
+   localStorage.setItem(LOCAL_STORAGE_MENU, XMENU)
+  }
+ }
+ /** @param {KeyboardEvent} ev*/
+ function teclas(ev) {
+  switch (ev.key) {
+   case "ArrowLeft":
+    retrocede()
+    break
+   case "ArrowRight":
+    avanza()
+    break
+  }
+ }
+ function retrocede() {
+  if (urlAnterior) {
+   location.href = urlAnterior
+  }
+ }
+ function avanza() {
+  if (urlSiguiente) {
+   location.href = urlSiguiente
+  }
+ }
+ /** @param {TouchEvent} ev*/
+ function iniciaTouch(ev) {
+  const toqueInicial = ev.touches[0]
+  iniciaX = toqueInicial.clientX
+  iniciaY = toqueInicial.clientY
+ }
+ /** @param {TouchEvent} ev*/
+ function desplazaTouch(ev) {
+  if (iniciaX && iniciaY) {
+   const desplazamiento = ev.touches[0]
+   var desplazamientoX = desplazamiento.clientX
+   var desplazamientoY = desplazamiento.clientY
+   var difX = desplazamientoX - iniciaX
+   var difY = desplazamientoY - iniciaY
+   // Checa que el movimiento no sea muy corto.
+   if (Math.abs(difX) + Math.abs(difY) > 90) {
+    if (Math.abs(difX) > Math.abs(difY)) {
+     if (difX > 70) {
+      retrocede()
+     } else {
+      avanza()
+     }
+     // Reinicia valores.
+     iniciaX = null
+     iniciaY = null
+    }
+   }
+  }
+ }
+ function onScroll() {
+  dy = scrollY - posY
+  posY = scrollY
+  if (!scrolling) {
+   requestAnimationFrame(avanzaScroll)
+  }
+  scrolling = true
+ }
+ function avanzaScroll() {
+  if (posY === 0) {
+   document.body.classList.remove(SCROLL)
+  } else if (dy < 0){
+   document.body.classList.remove(SCROLL)
+  } else if (dy > 0){
+   document.body.classList.add(SCROLL)
+  }
+  scrolling = false
+ }
+</script>
+</body>
+</html>

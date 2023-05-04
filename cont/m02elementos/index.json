@@ -1,0 +1,80 @@
+{
+ "type": "A",
+ "title": "Elementos del diseño gráfico",
+ "description": "Contenido de la lección «2. Elementos del diseño gráfico»",
+ "printDescription": "Página para imprimir de la lección «2. Elementos del diseño gráfico».",
+ "listado": [
+  {
+   "name": "mAtexto.html",
+   "title": "Texto",
+   "description": "Uso del texto."
+  },
+  {
+   "name": "mBformas.html",
+   "title": "Forma",
+   "h1": "<dfn>Forma</dfn>",
+   "description": "Definición de forma."
+  },
+  {
+   "name": "mCcolor.html",
+   "title": "Color",
+   "description": "Uso del color."
+  },
+  {
+   "name": "mDimagen.html",
+   "title": "Imagen",
+   "description": "Uso de las mágenes."
+  },
+  {
+   "name": "mEfigura.html",
+   "title": "Figura",
+   "h1": "<dfn>Figura</dfn>",
+   "description": "Definición de figura."
+  },
+  {
+   "name": "mFfondo.html",
+   "title": "Fondo",
+   "h1": "<dfn>Fondo</dfn>",
+   "description": "Definición de fondo."
+  },
+  {
+   "name": "mGpregnancia.html",
+   "title": "Pregnancia",
+   "h1": "<dfn>Pregnancia</dfn>",
+   "description": "Definición de pregnancia."
+  },
+  {
+   "name": "mHsimplicidad.html",
+   "title": "Simplicidad",
+   "h1": "<dfn>Simplicidad</dfn>",
+   "description": "Definición de simplicidad."
+  },
+  {
+   "name": "mIproximidad.html",
+   "title": "Proximidad",
+   "description": "Uso de la proximidad."
+  },
+  {
+   "name": "mJsemejanza.html",
+   "title": "Semejanza",
+   "description": "Uso de la semejanza."
+  },
+  {
+   "name": "mKcontraste.html",
+   "title": "Contraste",
+   "h1": "<dfn>Contraste</dfn>",
+   "description": "Definición y uso del contraste."
+  },
+  {
+   "name": "mLcontinuidad.html",
+   "title": "Continuidad",
+   "h1": "<dfn>Continuidad</dfn>",
+   "description": "Definición y uso de la continuidad."
+  },
+  {
+   "name": "mMpsiColor.html",
+   "title": "Psicología del color",
+   "description": "Definición de psicología del color."
+  }
+ ]
+}
