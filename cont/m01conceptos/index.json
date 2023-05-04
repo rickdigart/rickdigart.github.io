@@ -1,0 +1,50 @@
+{
+ "type": "A",
+ "title": "Conceptos básicos",
+ "description": "Contenido de la lección «1. Conceptos básicos»",
+ "printDescription": "Página para imprimir de la lección «1. Conceptos básicos».",
+ "listado": [
+  {
+   "name": "mAintroDisGraf.html",
+   "title": "Introducción al diseño gráfico",
+   "description": "Introducción al diseño gráfico."
+  },
+  {
+   "name": "mBdisGraf.html",
+   "title": "Diseño gráfico",
+   "h1": "<dfn>Diseño gráfico</dfn>",
+   "description": "Definición de diseño gráfico."
+  },
+  {
+   "name": "mCfunsDisGraf.html",
+   "title": "Funciones ",
+   "description": "Funciones del diseño gráfico."
+  },
+  {
+   "name": "mDapsDisGraf.html",
+   "title": "Aplicaciones",
+   "description": "Aplicaciones del diseño gráfico."
+  },
+  {
+   "name": "mEintroCreat.html",
+   "title": "Introducción a la creatividad",
+   "description": "Introducción a la creatividad."
+  },
+  {
+   "name": "mFcreat.html",
+   "title": "Creatividad",
+   "h1": "<dfn>Creatividad</dfn>",
+   "description": "Introducción a la creatividad."
+  },
+  {
+   "name": "mGfunCreat.html",
+   "title": "Functiones de la creatividad",
+   "description": "Functiones de la creatividad."
+  },
+  {
+   "name": "mHapsCreat.html",
+   "title": "Aplicaciones de la creatividad",
+   "description": "Aplicaciones de la creatividad."
+  }
+ ]
+}

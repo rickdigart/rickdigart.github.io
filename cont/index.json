@@ -1,0 +1,28 @@
+{
+ "type": "1",
+ "title": "Arte digital",
+ "description": "Página de inicio de GilPG AD, que introduce al diseño de imágenes digitales.",
+ "printDescription": "Página para imprimir todo el contenido de RICKMR AD, que introduce al diseño de imágenes digitales.",
+ "listado": [
+  {
+   "name": "m01conceptos"
+  },
+  {
+   "name": "m02elementos"
+  },
+  {
+   "name": "m03fases"
+  },
+  {
+   "name": "m04composicion.html",
+   "title": "Composición",
+   "description": "Composición."
+  },
+  {
+   "name": "m05derechos"
+  },
+  {
+   "name": "m06herramientas"
+  }
+ ]
+}

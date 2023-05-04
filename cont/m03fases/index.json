@@ -1,0 +1,108 @@
+{
+ "type": "A",
+ "title": "Fases del proceso de diseño",
+ "description": "Contenido de la lección «3. Fases del proceso de diseño».",
+ "printDescription": "Página para imprimir de la lección «3. Fases del proceso de diseño».",
+ "listado": [
+  {
+   "name": "mAfases.html",
+   "title": "Fases del proceso de diseño gráfico - creativo",
+   "description": "Fases del proceso de diseño gráfico - creativo."
+  },
+  {
+   "name": "mBanalitica.html",
+   "title": "Fase analítica",
+   "description": "Sección «Fase analítica»."
+  },
+  {
+   "name": "mCdefinicion.html",
+   "title": "Definición del problema o necesidad a resolver",
+   "description": "Definición del problema o necesidad a resolver."
+  },
+  {
+   "name": "mDplan.html",
+   "title": "Plan de acción detallado",
+   "description": "Plan de acción detallado."
+  },
+  {
+   "name": "mElistado.html",
+   "title": "Listado de requerimientos",
+   "description": "Listado de requerimientos."
+  },
+  {
+   "name": "mFcreativa.html",
+   "title": "Fase creativa",
+   "description": "Sección «Fase creativa»."
+  },
+  {
+   "name": "mGanalisis.html",
+   "title": "Análisis y síntesis de datos",
+   "description": "Análisis y síntesis de datos."
+  },
+  {
+   "name": "mHbocetaje.html",
+   "title": "Bocetaje inicial o preliminar",
+   "description": "Bocetaje inicial o preliminar."
+  },
+  {
+   "name": "mIpreseleccion.html",
+   "title": "Preselección de ideas",
+   "description": "Preselección de ideas."
+  },
+  {
+   "name": "mIevolucion.html",
+   "title": "Evolución de bocetos",
+   "description": "Evolución de bocetos."
+  },
+  {
+   "name": "mJpresentacion.html",
+   "title": "Elaboración de la presentación",
+   "description": "Elaboración de la presentación."
+  },
+  {
+   "name": "mKseleccion.html",
+   "title": "Selección de alternativas",
+   "description": "Selección de alternativas."
+  },
+  {
+   "name": "mLrefinado.html",
+   "title": "Refinado",
+   "description": "Refinado."
+  },
+  {
+   "name": "mMdesarrollo.html",
+   "title": "Fase de desarrollo",
+   "description": "Sección «Fase de desarrollo»."
+  },
+  {
+   "name": "mNvalidacion.html",
+   "title": "Validación del diseño",
+   "description": "Validación del diseño."
+  },
+  {
+   "name": "mOrefinadoPru.html",
+   "title": "Refinado en base a pruebas",
+   "description": "Refinado en base a pruebas."
+  },
+  {
+   "name": "mPaprobacion.html",
+   "title": "Aprobación del diseño final",
+   "description": "Aprobación del diseño final."
+  },
+  {
+   "name": "mQadaptacion.html",
+   "title": "Adaptación a diversas presentaciones",
+   "description": "Adaptación a diversas presentaciones."
+  },
+  {
+   "name": "mRpreparar.html",
+   "title": "Preparar documentos para producción",
+   "description": "Preparar documentos para producción."
+  },
+  {
+   "name": "mSsolucion.html",
+   "title": "Se obtiene la solución final",
+   "description": "Se obtiene la solución final."
+  }
+ ]
+}
