@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+ <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" sizes="32x32" href="/favicon.ico">
+<meta name="theme-color" content="#039623">
+<link rel="manifest" href="/site.webmanifest">
+<script src="/js/muestra-codigo.js"></script>
+ <title>Elementos del diseño gráfico - GilPG AD</title>
+ <meta name="description" content="Página para imprimir de la lección «2. Elementos del diseño gráfico».">
+ <style>
+ :root {
+  --padTop: 2rem;
+  --introDuracion: 2s;
+  --introFuncion: ease-out;
+  --padCont: 0.5rem;
+  --padNav: 0.75rem 0.5rem;
+  --anchoNav: 300px;
+  --anchoLectura: 900px;
+  --colLetra: black;
+  --colFondo: white;
+  --colTituloLetra: #00811c;
+  --colTituloShadow: 3px 1px 2px #bdbdbd;
+  --colTituloStrong: #684601;
+  --colTituloStrongSel: #ffdc97;
+  --colTarget: #cef4ff;
+  --colSombra: #49494980;
+  --navSombra: 0.5rem 0 0.5rem var(--colSombra);
+  --padCtrl: 0.2rem 0.3rem;
+  --borderCtrl: solid thin;
+  --colFondoNav: #f2f2f2;
+  --colNavResaltada: #7a2c99;
+  --colSecundario: #ffff82;
+  --colStack1: black;
+  --colStack2: #224ba5;
+  --colStack3: #92731f;
+  --colScrollbar: #CFD8DC;
+  --colThumb: #90a4ae;
+  --colThumbActivo: #3f3f3f;
+  --anchoThumb: 7px;
+  --borderRadiusThumb: 3.5px;
+  --gap: 0.5rem;
+  --fontMono: monospace;
+  --fontSans: sans-serif;
+  --fontSerif: serif;
+  font-family: var(--fontSerif);
+  color: var(--colLetra);
+  background-color: var(--colFondo);
+  scrollbar-width: thin;
+  scrollbar-color: var(--colThumb) var(--colScrollbar);
+ }
+
+ body::-webkit-scrollbar {
+  width: var(--anchoThumb);
+  height: var(--anchoThumb);
+ }
+
+ body::-webkit-scrollbar-track {
+  background: var(--colScrollbar);
+ }
+
+ body::-webkit-scrollbar-thumb {
+  background-color: var(--colThumb);
+  border-radius: var(--borderRadiusThumb);
+ }
+
+ body::-webkit-scrollbar-thumb:active {
+  background-color: var(--colThumbActivo);
+ }
+
+ .anterior,
+ .siguiente {
+  display: inline-block;
+  text-decoration: none;
+  padding: var(--padCtrl);
+  border: var(--borderCtrl);
+  cursor: pointer;
+ }
+
+ .anterior.bye,
+ .siguiente.bye {
+  display: none;
+ }
+
+ a[data-logo] {
+  display: block;
+  height: 54px;
+  line-height: 54px;
+  padding-left: 54px;
+  margin-top: 1rem;
+  background-image: url("/img/icono/maskable_icon_x48.png");
+  background-position: 3px center;
+  background-repeat: no-repeat;
+ }
+
+ a strong,
+ a code,
+ h1 strong,
+ h1 code {
+  color: var(--colTituloStrong);
+ }
+
+ nav a {
+  font-family: var(--fontSans);
+ }
+
+ pre {
+  font-family: var(--fontMono);
+ }
+
+ code {
+  color: var(--colTituloStrong);
+  font-family: var(--fontMono);
+ }
+
+ h1:not(.default) {
+  font-family: var(--fontSans);
+  color: var(--colTituloLetra);
+ }
+
+ .autor {
+  font-family: var(--fontSans);
+  font-size: 1.5rem;
+  color: var(--colTituloLetra);
+ }
+
+ figure {
+  text-align: center;
+ }
+
+ figure img {
+  max-width: 100%;
+  max-height: 65vh;
+ }
+
+ figure img.med {
+  max-height: 55vh;
+ }
+
+ figcaption {
+  font-family: var(--fontMono);
+ }
+
+ .print .noPrint {
+  display: none;
+ }
+
+ @media print {
+  .noPrint {
+   display: none;
+  }
+
+  .pruebaDeEscritorio {
+   page-break-before: always;
+  }
+ }
+
+ iframe {
+  box-sizing: border-box;
+  width: 100%;
+ }
+
+ .lectura {
+  max-width: var(--anchoLectura);
+  margin: 1rem auto;
+ }
+
+ .lectura p,
+ .lectura blockquote {
+  text-align: justify;
+ }
+
+ /* No funciona bien con display:flex en pantallas pequeñas. */
+ .horizontal {
+  text-align: center;
+ }
+
+ .horizontal>* {
+  display: inline-block;
+  vertical-align: top;
+  text-align: left;
+ }
+
+ .horizontal>*:not(:first-child) {
+  margin-left: 1rem;
+ }
+
+ .columnas4 {
+  columns: 4 180px;
+  column-gap: 1rem;
+ }
+
+ .columnas2 {
+  columns: 2 360px;
+  column-gap: 1rem;
+ }
+
+ .resaltado {
+  background-color: rgb(255, 255, 89);
+ }
+
+ .resaltado2 {
+  background-color: rgb(255, 214, 139);
+ }
+
+ table.borde {
+  margin-left: auto;
+  margin-right: auto;
+ }
+
+ table.borde,
+ table.borde td {
+  border: thin solid;
+  border-collapse: collapse;
+ }
+
+ table.borde th,
+ table.borde td {
+  padding: 0.4rem;
+ }
+
+ muestra-codigo>div>div {
+  white-space: nowrap;
+ }
+
+ footer {
+  margin-top: 1rem;
+  display: block;
+  text-align: center;
+  font-family: var(--fontSans);
+  font-size: small;
+ }
+</style>
+ <style>
+ .pruebaDeEscritorio section {
+  display: inline-block;
+  vertical-align: top;
+  margin: 1em;
+ }
+
+ .pruebaDeEscritorio section pre {
+  margin: 0;
+ }
+
+ .pruebaDeEscritorio samp {
+  font-weight: bold;
+ }
+
+ .pruebaDeEscritorio .activo {
+  display: inline-block;
+  margin: 0 0.2rem 0 0;
+  vertical-align: top;
+  background-color: var(--colSecundario);
+  border: 1px solid var(--colSecundario);
+ }
+
+ .pruebaDeEscritorio :target,
+ .pruebaDeEscritorio :target caption {
+  background-color: var(--colTarget);
+ }
+
+ .pruebaDeEscritorio .numero1 {
+  display: inline-block;
+  margin: 0 0.2rem 0 0;
+  color: var(--colStack1);
+  border: 1px solid var(--colStack1);
+ }
+
+ .pruebaDeEscritorio .numero2 {
+  display: inline-block;
+  color: var(--colStack2);
+  border: 1px solid var(--colStack2);
+ }
+
+ .pruebaDeEscritorio .numero3 {
+  display: inline-block;
+  color: var(--colStack3);
+  border: 1px solid var(--colStack3);
+ }
+
+ .pruebaDeEscritorio a.parametro1,
+ .pruebaDeEscritorio .parametro1 {
+  color: var(--colPar1);
+ }
+
+ .pruebaDeEscritorio a.parametro2,
+ .pruebaDeEscritorio .parametro2 {
+  color: var(--colPar2);
+ }
+
+ .pruebaDeEscritorio .descongela {
+  color: var(--colDescongela);
+ }
+
+ .pruebaDeEscritorio table.tabla1,
+ .pruebaDeEscritorio table.tabla1 th,
+ .pruebaDeEscritorio table.tabla1 td {
+  border: 1px solid var(--colStack1);
+ }
+
+ .pruebaDeEscritorio table.tabla2,
+ .pruebaDeEscritorio table.tabla2 th,
+ .pruebaDeEscritorio table.tabla2 td {
+  border: 1px solid var(--colStack2);
+ }
+
+ .pruebaDeEscritorio table.tabla3,
+ .pruebaDeEscritorio table.tabla3 th,
+ .pruebaDeEscritorio table.tabla3 td {
+  border: 1px solid var(--colStack3);
+ }
+
+ .pruebaDeEscritorio .frame {
+  font-family: var(--fontMono);
+  border-collapse: collapse;
+ }
+
+ .pruebaDeEscritorio .frame,
+ .pruebaDeEscritorio .frame th,
+ .pruebaDeEscritorio .frame td {
+  border: thin solid;
+ }
+
+ .pruebaDeEscritorio .frame caption {
+  font-style: italic;
+ }
+
+ .pruebaDeEscritorio .objeto caption {
+  text-decoration: underline;
+  font-style: italic;
+ }
+
+ .pruebaDeEscritorio .creación {
+  display: flex;
+ }
+</style>
+</head>
+<body class="print">
+   <h1 class="leccion">2. Elementos del diseño gráfico</h1>
+   <div class="lectura"> 
+    <p class="noPrint">
+     <a href="print.html" target="_blank" rel="noopener">Versión para
+      imprimir.</a>
+    </p>
+   </div>
+<div class="lectura">
+ <p>
+  En esta lección se introducen los elementos del diseño gráfico.
+ </p>
+ <nav>
+  <h1>Contenido</h1>
+  
+   <ol type="A">
+    <li>
+     <p>
+      <a href="/m02elementos/mAtexto.html">Texto</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m02elementos/mBformas.html"><dfn>Forma</dfn></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m02elementos/mCcolor.html">Color</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m02elementos/mDimagen.html">Imagen</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m02elementos/mEfigura.html"><dfn>Figura</dfn></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m02elementos/mFfondo.html"><dfn>Fondo</dfn></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m02elementos/mGpregnancia.html"><dfn>Pregnancia</dfn></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m02elementos/mHsimplicidad.html"><dfn>Simplicidad</dfn></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m02elementos/mIproximidad.html">Proximidad</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m02elementos/mJsemejanza.html">Semejanza</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m02elementos/mKcontraste.html"><dfn>Contraste</dfn></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m02elementos/mLcontinuidad.html"><dfn>Continuidad</dfn></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m02elementos/mMpsiColor.html">Psicología del color</a>
+     </p>
+    </li>
+   </ol>
+ </nav>
+</div>
+     <section >
+         <h1 >A. Texto</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>Se puede usar como un elemento gráfico.</p>
+  </li>
+  <li>
+   <p>
+    En ocasiones hay que desarrollar una nueva familia con características y
+    colores propios.
+   </p>
+  </li>
+  <li>
+   <p>Los podemos encontrar en logotipos.</p>
+  </li>
+ </ul>
+</div>
+<figure>
+ <img class="med" alt="Texto con formato visual"
+   src="/img/m02elementos/iloveyou.jpg">
+</figure>
+      </section>
+     <section >
+         <h1 >B. <dfn>Forma</dfn></h1><div class="lectura">
+ <ul>
+  <li>
+   <p>Cualquier cosa que está definida por límites.</p>
+  </li>
+  <li>
+   <p>2 categorías:</p>
+   <dl>
+    <dt><dfn>Geométricas</dfn></dt>
+    <dd>
+     <p>
+      Geométricas, uniformes, perfectas, como círculos, cuadrados, triángulos.
+     </p>
+    </dd>
+    <dt><dfn>Orgánicas</dfn></dt>
+    <dd>
+     <p>No tienen reglas.</p>
+    </dd>
+   </dl>
+  </li>
+ </ul>
+</div>
+<figure>
+ <img class="med" alt="Texto con formato visual"
+   src="/img/m02elementos/formas.png">
+</figure>
+<div class="lectura">
+ <ul>
+  <li>
+   <p>
+    <small>
+     Fuente:
+     <a target="_blank" rel="nooper"
+       href="https://blog.hubspot.es/marketing/elementos-diseno-grafico">https://blog.hubspot.es/marketing/elementos-diseno-grafico</a>
+    </small>
+   </p>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >C. Color</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>Usa colores opuestos o contiguos en el círculo cromático.</p>
+  </li>
+  <li>
+   <p>
+    Considera usar una herramienta en línea gratuita para la elaboración de
+    esquemas como:
+   </p>
+   <ul>
+    <li>
+     <p>
+      <a href="https://paletton.com/" target="_blank"
+        rel="nooper">https://paletton.com/</a>
+     </p>
+    </li>
+   </ul>
+  </li>
+ </ul>
+</div>
+<figure>
+ <img alt="Esquemas de colores" src="/img/m02elementos/color.gif">
+</figure>
+<div class="lectura">
+ <ul>
+  <li>
+   <p>
+    <small>
+     Fuente:
+     <a target="_blank" rel="nooper"
+       href="https://blog.hubspot.es/marketing/elementos-diseno-grafico">https://blog.hubspot.es/marketing/elementos-diseno-grafico</a>
+    </small>
+   </p>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >D. Imagen</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>Crear imágenes es el objetivo principal del diseño gráfico.</p>
+  </li>
+  <li>
+   <p>También se pueden añadir imágenes ya existentes.</p>
+  </li>
+ </ul>
+</div>
+<figure>
+ <img class="med" alt="Esquemas de colores" src="/img/m02elementos/Imagen.jpg">
+</figure>
+<div class="lectura">
+ <ul>
+  <li>
+   <p>
+    <small>
+     Fuente de la imagen:
+     <a target="_blank" rel="nooper"
+       href="https://listas.20minutos.es/lista/elementos-del-diseno-web-408618/">https://listas.20minutos.es/lista/elementos-del-diseno-web-408618/</a>
+    </small>
+   </p>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >E. <dfn>Figura</dfn></h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Es un elemento que existe en un espacio o campo destacándose en su
+    interrelación con otros elementos.
+   </p>
+  </li>
+ </ul>
+</div>
+<figure>
+ <img class="med" alt="Figura de zapatos tenis"
+   src="/img/m02elementos/pexels-valeriia-miller-2530912.jpg">
+</figure>
+<div class="lectura">
+ <ul>
+  <li>
+   <p>
+    <small>
+     Fuente de la imagen:
+     <a href="https://www.pexels.com/photo/converse-all-star-low-top-sneakers-on-brown-wooden-surface-2530912/"
+       target="_blank" rel="nooper">Photo by <strong>Valeriia
+       Miller</strong> from <strong>Pexels</strong></a>
+    </small>
+   </p>
+  </li>
+  <li>
+   <p>
+    <small>
+     Fuente del texto:
+     <a href="http://introaldg.weebly.com/elementos-de-la-gestalt.html"
+       target="_blank"
+       rel="nooper">http://introaldg.weebly.com/elementos-de-la-gestalt.html</a>
+    </small>
+   </p>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >F. <dfn>Fondo</dfn></h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Todo aquello que no es figura, es la parte del campo que contiene elementos
+    interrelacionados que sostienen a la figura que por su contraste tienden a
+    desaparecer.
+   </p>
+  </li>
+ </ul>
+</div>
+<figure>
+ <img class="med" alt="Mano sobre fondo borroso"
+   src="/img/m02elementos/pexels-erik-mclean-4365459.jpg">
+</figure>
+<div class="lectura">
+ <ul>
+  <li>
+   <p>
+    <small>
+     Fuente de la imagen:
+     <a href="https://www.pexels.com/es-es/foto/mano-sin-rostro-efecto-desenfocado-horizontal-4365459/"
+       target="_blank" rel="nooper">Foto de <strong>Erik Mclean</strong> en
+      <strong>Pexels</strong></a>
+    </small>
+   </p>
+  </li>
+  <li>
+   <p>
+    <small>
+     Fuente del texto:
+     <a href="http://introaldg.weebly.com/elementos-de-la-gestalt.html"
+       target="_blank"
+       rel="nooper">http://introaldg.weebly.com/elementos-de-la-gestalt.html</a>
+    </small>
+   </p>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >G. <dfn>Pregnancia</dfn></h1><div class="lectura">
+ <ul>
+  <li>
+   <p>Cualidad que poseen las figuras de distinguirse fácilmente.</p>
+  </li>
+  <li>
+   <p>
+    Figuras tales como el cuadrado, el círculo o incluso el triángulo equilátero
+    cuentan con mayor pregnancia.
+   </p>
+  </li>
+ </ul>
+</div>
+<figure>
+ <img alt="Rebanadas de círculos formando triángulos"
+   src="/img/m02elementos/pregnancia.png">
+</figure>
+      </section>
+     <section >
+         <h1 >H. <dfn>Simplicidad</dfn></h1><div class="lectura">
+ <ul>
+  <li>
+   <p>Transmitir de una forma clara y concisa.</p>
+  </li>
+  <li>
+   <p>Los buenos diseños no se ven.</p>
+  </li>
+  <li>
+   <p>
+    Los diseños complicados nos obligan a un esfuerzo que nos parece artificial.
+   </p>
+  </li>
+ </ul>
+</div>
+<figure>
+ <img class="med" alt="Flor simple"
+   src="/img/m02elementos/pexels-evie-shaffer-2395255.jpg">
+</figure>
+<div class="lectura">
+ <ul>
+  <li>
+   <p>
+    <small>
+     Fuente de la imagen:
+     <a href="https://www.pexels.com/es-es/foto/flores-marrones-de-4-petalos-2395255/"
+       target="_blank" rel="nooper">Foto de <strong>Evie Shaffer</strong> en
+      <strong>Pexels</strong></a>
+    </small>
+   </p>
+  </li>
+  <li>
+   <p>
+    <small>
+     Fuente del texto:
+     <a href="http://albertolacalle.com/diseno/simple.htm"
+       target="_blank"
+       rel="nooper">http://albertolacalle.com/diseno/simple.htm</a>
+    </small>
+   </p>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >I. Proximidad</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Cuando varios elementos se encuentran próximos, se convierten en una unidad
+    visual única.
+   </p>
+  </li>
+ </ul>
+</div>
+<figure>
+ <img class="med" alt="Figuras en grupos"
+   src="/img/m02elementos/proximidad.jpg">
+</figure>
+      </section>
+     <section >
+         <h1 >J. Semejanza</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Tenemos la tendencia de agrupar los elementos que son similares entre sí, ya
+    sea por forma, color, tamaño o textura.
+   </p>
+  </li>
+  <li>
+   <p>La semejanza ayuda a nuestro cerebro a percibir imágenes cohesivas.</p>
+  </li>
+ </ul>
+</div>
+<figure>
+ <img class="med" alt="Figuras relacionadas por color"
+   src="/img/m02elementos/semejanza.png">
+</figure>
+      </section>
+     <section >
+         <h1 >K. <dfn>Contraste</dfn></h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Convivencia de elementos claramente diferentes entre sí (grande vs. pequeño,
+    luz vs. oscuridad, etc.) para crear un interés visual.
+   </p>
+  </li>
+  <li>
+   <p>
+    Sin contraste, nuestros diseños son apagados, aburridos y difíciles de
+    entender.
+   </p>
+  </li>
+ </ul>
+</div>
+<figure>
+ <img class="med" alt="Paraguas que contrasta por color"
+   src="/img/m02elementos/contraste.jpg">
+</figure>
+<div class="lectura">
+ <ul>
+  <li>
+   <p>
+    <small>
+     Fuente de la imagen:
+     <a href="https://ideakreativa.com/uso-contraste-diseno-grafico-diseno-layouts/"
+       target="_blank"
+       rel="nooper">https://ideakreativa.com/uso-contraste-diseno-grafico-diseno-layouts/</a>
+    </small>
+   </p>
+  </li>
+  <li>
+   <p>
+    <small>
+     Fuente del texto:
+     <a href="https://blog.hubspot.es/marketing/elementos-diseno-grafico"
+       target="_blank"
+       rel="nooper">https://blog.hubspot.es/marketing/elementos-diseno-grafico</a>
+    </small>
+   </p>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >L. <dfn>Continuidad</dfn></h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Es el principio por el que el ojo es atraído por un sendero, línea o curva.
+   </p>
+  </li>
+  <li>
+   <p>
+    Se puede utilizar para apuntar hacia un elemento secundario del diseño.
+   </p>
+  </li>
+ </ul>
+</div>
+<figure>
+ <img alt="Aves apuntando"
+   src="/img/m02elementos/continuidad.jpg">
+</figure>
+<div class="lectura">
+ <ul>
+  <li>
+   <p>
+    <small>
+     Fuente de la imagen:
+     <a href="http://www.interioressilvanamccolgan.com/leyes-sobre-diseno-y-percepcion/"
+       target="_blank"
+       rel="nooper">http://www.interioressilvanamccolgan.com/leyes-sobre-diseno-y-percepcion/</a>
+    </small>
+   </p>
+  </li>
+  <li>
+   <p>
+    <small>
+     Fuente del texto:
+     <a href="http://gtechdesign.net/es/blog/leyes-de-la-gestalt-en-el-diseno-grafico"
+       target="_blank"
+       rel="nooper">http://gtechdesign.net/es/blog/leyes-de-la-gestalt-en-el-diseno-grafico</a>
+    </small>
+   </p>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >M. Psicología del color</h1><figure>
+ <img alt="Paraguas que contrasta por color"
+   src="/img/m02elementos/psicol.jpg">
+</figure>
+<div class="lectura">
+ <ul>
+  <li>
+   <p>
+    <small>
+     Fuente de la imagen:
+     <a href="https://chet.com.ar/blog/psicologia-del-color-marketing/"
+       target="_blank"
+       rel="nooper">https://chet.com.ar/blog/psicologia-del-color-marketing/</a>
+    </small>
+   </p>
+  </li>
+ </ul>
+</div>
+      </section>
+</body>
+</html>

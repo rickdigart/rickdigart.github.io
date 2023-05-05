@@ -1,0 +1,33 @@
+{
+ "type": "A",
+ "title": "Derechos de autor",
+ "description": "Contenido de la lección «5. Derechos de autor».",
+ "printDescription": "Página para imprimir de la lección «5. Derechos de autor».",
+ "listado": [
+  {
+   "name": "mAderechos.html",
+   "title": "Derechos de autor",
+   "description": "Derechos de autor."
+  },
+  {
+   "name": "mBindautor.html",
+   "title": "INDAUTOR",
+   "description": "INDAUTOR."
+  },
+  {
+   "name": "mCestablecer.html",
+   "title": "Establecer derechos",
+   "description": "Establecer derechos."
+  },
+  {
+   "name": "mDcreative.html",
+   "title": "Creative Commons",
+   "description": "Creative Commons."
+  },
+  {
+   "name": "mElicenciasC.html",
+   "title": "Licencias Creative Commons",
+   "description": "Licencias Creative Commons."
+  }
+ ]
+}

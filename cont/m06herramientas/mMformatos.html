@@ -1,0 +1,169 @@
+<div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Aparte de los formatos propietarios de las herremientas, por ejemplo el psd,
+    hay otros formatos que se usan entre muchas más herramientas con ciertas
+    características especiales.
+   </p>
+  </li>
+  <dl>
+   <dt><dfn>jpeg</dfn></dt>
+   <dt><dfn>jpg</dfn></dt>
+   <dd>
+    <ul>
+     <li>
+      <p>Joint Photographic Experts Group</p>
+     </li>
+     <li>
+      <p>
+       Un formato viejo, pero muy extendido que maneja pixeles y se adapta bien
+       a fotografías e imágenes realistas.
+      </p>
+     </li>
+    </ul>
+   </dd>
+   <dt><dfn>gif</dfn></dt>
+   <dd>
+    <ul>
+     <li>
+      <p>Graphic Interchange Format</p>
+     </li>
+     <li>
+      <p>
+       Un formato viejo, pero muy extendido que maneja pixeles y se adapta
+       bien a dibujos creados con herramientas gráficas que manejan
+       transparencias. También permite animaciones.
+      </p>
+     </li>
+    </ul>
+   </dd>
+   <dt><dfn>png</dfn></dt>
+   <dd>
+    <ul>
+     <li>
+      <p>Portable Network Graphics</p>
+     </li>
+     <li>
+      <p>
+       Un formato un poco más moderno y muy extendido que maneja pixeles y se
+       adapta bien a dibujos creados con herramientas gráficas que manejan
+       transparencias. También permite animaciones.
+      </p>
+     </li>
+    </ul>
+   </dd>
+   <dt><dfn>webp</dfn></dt>
+   <dd>
+    <ul>
+     <li>
+      <p>Portable Network Graphics</p>
+     </li>
+     <li>
+      <p>
+       Un formato moderno con pixeles y mucha compresión, muy adecuado para la
+       web.
+      </p>
+     </li>
+    </ul>
+   </dd>
+   <dt><dfn>svg</dfn></dt>
+   <dd>
+    <ul>
+     <li>
+      <p>Scalable Vector Graphics</p>
+     </li>
+     <li>
+      <p>
+       Un dtd de sgml o xml (archivo de texto con etiquetas) que representa
+       figuras geométricas y rutas vectorizadas que facilmente puede adaptarse a
+       distintos tamaños sin perder resolución.
+      </p>
+     </li>
+    </ul>
+   </dd>
+  </dl>
+</div>
+<section>
+ <h1>Ejemplo de SVG</h1>
+ <div class="horizontal">
+  <section>
+   <h1>Salida</h1>
+   <figure>
+    <img class="med" alt="Ejemplo de svg"
+      src="/img/m06herramientas/ejemplo_svg.svg">
+   </figure>
+  </section>
+  <section>
+   <h1>Código</h1>
+   <muestra-codigo>
+    <div>
+     <div><span style="color: #800000;">&lt;svg</span> <span
+        style="color: #ff0000;">version</span>=<span
+        style="color: #0000ff;">"1.2"</span></div>
+     <div>&nbsp;<span style="color: #ff0000;">xmlns</span>=<span
+        style="color: #0000ff;">"http://www.w3.org/2000/svg"</span></div>
+     <div>&nbsp;<span style="color: #ff0000;">viewBox</span>=<span
+        style="color: #0000ff;">"0 0 640 480"</span> <span
+        style="color: #ff0000;">width</span>=<span
+        style="color: #0000ff;">"640"</span></div>
+     <div>&nbsp;<span style="color: #ff0000;">height</span>=<span
+        style="color: #0000ff;">"480"</span><span
+        style="color: #800000;">&gt;</span></div>
+     <div>&nbsp;<span
+        style="color: #800000;">&lt;title&gt;</span>ejemplo svg<span
+        style="color: #800000;">&lt;/title&gt;</span></div>
+     <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
+     <div>&nbsp; .s0 { fill: #ff0000 } </div>
+     <div>&nbsp; .s1 {</div>
+     <div>&nbsp; &nbsp;fill: #00ff00;</div>
+     <div>&nbsp; &nbsp;stroke: #0000ff;</div>
+     <div>&nbsp; &nbsp;stroke-width: 8 } </div>
+     <div>&nbsp; .s2 { fill: #ff00ff } </div>
+     <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
+     <div>&nbsp;<span style="color: #800000;">&lt;rect</span> <span
+        style="color: #ff0000;">id</span>=<span
+        style="color: #0000ff;">"Forma 1"</span> <span
+        style="color: #ff0000;">class</span>=<span
+        style="color: #0000ff;">"s0"</span></div>
+     <div>&nbsp; <span style="color: #ff0000;">x</span>=<span
+        style="color: #0000ff;">"57"</span> <span
+        style="color: #ff0000;">y</span>=<span
+        style="color: #0000ff;">"213"</span> <span
+        style="color: #ff0000;">width</span>=<span
+        style="color: #0000ff;">"443"</span></div>
+     <div>&nbsp; <span style="color: #ff0000;">height</span>=<span
+        style="color: #0000ff;">"146"</span> <span
+        style="color: #ff0000;">rx</span>=<span
+        style="color: #0000ff;">"10"</span><span
+        style="color: #800000;">&gt;&lt;/rect&gt;</span></div>
+     <div>&nbsp;<span style="color: #800000;">&lt;ellipse</span> <span
+        style="color: #ff0000;">id</span>=<span
+        style="color: #0000ff;">"Forma 2"</span> <span
+        style="color: #ff0000;">class</span>=<span
+        style="color: #0000ff;">"s1"</span></div>
+     <div>&nbsp; <span style="color: #ff0000;">cx</span>=<span
+        style="color: #0000ff;">"261"</span> <span
+        style="color: #ff0000;">cy</span>=<span
+        style="color: #0000ff;">"164"</span> <span
+        style="color: #ff0000;">rx</span>=<span
+        style="color: #0000ff;">"104"</span></div>
+     <div>&nbsp; <span style="color: #ff0000;">ry</span>=<span
+        style="color: #0000ff;">"91"</span><span
+        style="color: #800000;">/&gt;</span></div>
+     <div>&nbsp;<span style="color: #800000;">&lt;path</span> <span
+        style="color: #ff0000;">id</span>=<span
+        style="color: #0000ff;">"Capa 1"</span> <span
+        style="color: #ff0000;">class</span>=<span
+        style="color: #0000ff;">"s2"</span></div>
+     <div>&nbsp; <span style="color: #ff0000;">d</span>=<span
+        style="color: #0000ff;">"m456 161.2l-125.1</span></div>
+     <div><span
+        style="color: #0000ff;">&nbsp; &nbsp;74.2l-1.8-145.5z"</span><span
+        style="color: #800000;">/&gt;</span></div>
+     <div><span style="color: #800000;">&lt;/svg&gt;</span></div>
+    </div>
+   </muestra-codigo>
+  </section>
+ </div>
+</section>
