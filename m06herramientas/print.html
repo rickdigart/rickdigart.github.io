@@ -1,0 +1,1590 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+ <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" sizes="32x32" href="/favicon.ico">
+<meta name="theme-color" content="#039623">
+<link rel="manifest" href="/site.webmanifest">
+<script src="/js/muestra-codigo.js"></script>
+ <title>Herramientas digitales</title>
+ <meta name="description" content="Página para imprimir de la lección «5. Herramientas digitales».">
+ <style>
+ :root {
+  --padTop: 2rem;
+  --introDuracion: 2s;
+  --introFuncion: ease-out;
+  --padCont: 0.5rem;
+  --padNav: 0.75rem 0.5rem;
+  --anchoNav: 300px;
+  --anchoLectura: 900px;
+  --colLetra: black;
+  --colFondo: white;
+  --colTituloLetra: #00811c;
+  --colTituloShadow: 3px 1px 2px #bdbdbd;
+  --colTituloStrong: #684601;
+  --colTituloStrongSel: #ffdc97;
+  --colTarget: #cef4ff;
+  --colSombra: #49494980;
+  --navSombra: 0.5rem 0 0.5rem var(--colSombra);
+  --padCtrl: 0.2rem 0.3rem;
+  --borderCtrl: solid thin;
+  --colFondoNav: #f2f2f2;
+  --colNavResaltada: #7a2c99;
+  --colSecundario: #ffff82;
+  --colStack1: black;
+  --colStack2: #224ba5;
+  --colStack3: #92731f;
+  --colScrollbar: #CFD8DC;
+  --colThumb: #90a4ae;
+  --colThumbActivo: #3f3f3f;
+  --anchoThumb: 7px;
+  --borderRadiusThumb: 3.5px;
+  --gap: 0.5rem;
+  --fontMono: monospace;
+  --fontSans: sans-serif;
+  --fontSerif: serif;
+  font-family: var(--fontSerif);
+  color: var(--colLetra);
+  background-color: var(--colFondo);
+  scrollbar-width: thin;
+  scrollbar-color: var(--colThumb) var(--colScrollbar);
+ }
+
+ body::-webkit-scrollbar {
+  width: var(--anchoThumb);
+  height: var(--anchoThumb);
+ }
+
+ body::-webkit-scrollbar-track {
+  background: var(--colScrollbar);
+ }
+
+ body::-webkit-scrollbar-thumb {
+  background-color: var(--colThumb);
+  border-radius: var(--borderRadiusThumb);
+ }
+
+ body::-webkit-scrollbar-thumb:active {
+  background-color: var(--colThumbActivo);
+ }
+
+ .anterior,
+ .siguiente {
+  display: inline-block;
+  text-decoration: none;
+  padding: var(--padCtrl);
+  border: var(--borderCtrl);
+  cursor: pointer;
+ }
+
+ .anterior.bye,
+ .siguiente.bye {
+  display: none;
+ }
+
+ a[data-logo] {
+  display: block;
+  height: 54px;
+  line-height: 54px;
+  padding-left: 54px;
+  margin-top: 1rem;
+  background-image: url("/img/icono/maskable_icon_x48.png");
+  background-position: 3px center;
+  background-repeat: no-repeat;
+ }
+
+ a strong,
+ a code,
+ h1 strong,
+ h1 code {
+  color: var(--colTituloStrong);
+ }
+
+ nav a {
+  font-family: var(--fontSans);
+ }
+
+ pre {
+  font-family: var(--fontMono);
+ }
+
+ code {
+  color: var(--colTituloStrong);
+  font-family: var(--fontMono);
+ }
+
+ h1:not(.default) {
+  font-family: var(--fontSans);
+  color: var(--colTituloLetra);
+ }
+
+ .autor {
+  font-family: var(--fontSans);
+  font-size: 1.5rem;
+  color: var(--colTituloLetra);
+ }
+
+ figure {
+  text-align: center;
+ }
+
+ figure img {
+  max-width: 100%;
+  max-height: 65vh;
+ }
+
+ figure img.med {
+  max-height: 55vh;
+ }
+
+ figcaption {
+  font-family: var(--fontMono);
+ }
+
+ .print .noPrint {
+  display: none;
+ }
+
+ @media print {
+  .noPrint {
+   display: none;
+  }
+
+  .pruebaDeEscritorio {
+   page-break-before: always;
+  }
+ }
+
+ iframe {
+  box-sizing: border-box;
+  width: 100%;
+ }
+
+ .lectura {
+  max-width: var(--anchoLectura);
+  margin: 1rem auto;
+ }
+
+ .lectura p,
+ .lectura blockquote {
+  text-align: justify;
+ }
+
+ /* No funciona bien con display:flex en pantallas pequeñas. */
+ .horizontal {
+  text-align: center;
+ }
+
+ .horizontal>* {
+  display: inline-block;
+  vertical-align: top;
+  text-align: left;
+ }
+
+ .horizontal>*:not(:first-child) {
+  margin-left: 1rem;
+ }
+
+ .columnas4 {
+  columns: 4 180px;
+  column-gap: 1rem;
+ }
+
+ .columnas2 {
+  columns: 2 360px;
+  column-gap: 1rem;
+ }
+
+ .resaltado {
+  background-color: rgb(255, 255, 89);
+ }
+
+ .resaltado2 {
+  background-color: rgb(255, 214, 139);
+ }
+
+ table.borde {
+  margin-left: auto;
+  margin-right: auto;
+ }
+
+ table.borde,
+ table.borde td {
+  border: thin solid;
+  border-collapse: collapse;
+ }
+
+ table.borde th,
+ table.borde td {
+  padding: 0.4rem;
+ }
+
+ muestra-codigo>div>div {
+  white-space: nowrap;
+ }
+
+ footer {
+  margin-top: 1rem;
+  display: block;
+  text-align: center;
+  font-family: var(--fontSans);
+  font-size: small;
+ }
+</style>
+ <style>
+ .pruebaDeEscritorio section {
+  display: inline-block;
+  vertical-align: top;
+  margin: 1em;
+ }
+
+ .pruebaDeEscritorio section pre {
+  margin: 0;
+ }
+
+ .pruebaDeEscritorio samp {
+  font-weight: bold;
+ }
+
+ .pruebaDeEscritorio .activo {
+  display: inline-block;
+  margin: 0 0.2rem 0 0;
+  vertical-align: top;
+  background-color: var(--colSecundario);
+  border: 1px solid var(--colSecundario);
+ }
+
+ .pruebaDeEscritorio :target,
+ .pruebaDeEscritorio :target caption {
+  background-color: var(--colTarget);
+ }
+
+ .pruebaDeEscritorio .numero1 {
+  display: inline-block;
+  margin: 0 0.2rem 0 0;
+  color: var(--colStack1);
+  border: 1px solid var(--colStack1);
+ }
+
+ .pruebaDeEscritorio .numero2 {
+  display: inline-block;
+  color: var(--colStack2);
+  border: 1px solid var(--colStack2);
+ }
+
+ .pruebaDeEscritorio .numero3 {
+  display: inline-block;
+  color: var(--colStack3);
+  border: 1px solid var(--colStack3);
+ }
+
+ .pruebaDeEscritorio a.parametro1,
+ .pruebaDeEscritorio .parametro1 {
+  color: var(--colPar1);
+ }
+
+ .pruebaDeEscritorio a.parametro2,
+ .pruebaDeEscritorio .parametro2 {
+  color: var(--colPar2);
+ }
+
+ .pruebaDeEscritorio .descongela {
+  color: var(--colDescongela);
+ }
+
+ .pruebaDeEscritorio table.tabla1,
+ .pruebaDeEscritorio table.tabla1 th,
+ .pruebaDeEscritorio table.tabla1 td {
+  border: 1px solid var(--colStack1);
+ }
+
+ .pruebaDeEscritorio table.tabla2,
+ .pruebaDeEscritorio table.tabla2 th,
+ .pruebaDeEscritorio table.tabla2 td {
+  border: 1px solid var(--colStack2);
+ }
+
+ .pruebaDeEscritorio table.tabla3,
+ .pruebaDeEscritorio table.tabla3 th,
+ .pruebaDeEscritorio table.tabla3 td {
+  border: 1px solid var(--colStack3);
+ }
+
+ .pruebaDeEscritorio .frame {
+  font-family: var(--fontMono);
+  border-collapse: collapse;
+ }
+
+ .pruebaDeEscritorio .frame,
+ .pruebaDeEscritorio .frame th,
+ .pruebaDeEscritorio .frame td {
+  border: thin solid;
+ }
+
+ .pruebaDeEscritorio .frame caption {
+  font-style: italic;
+ }
+
+ .pruebaDeEscritorio .objeto caption {
+  text-decoration: underline;
+  font-style: italic;
+ }
+
+ .pruebaDeEscritorio .creación {
+  display: flex;
+ }
+</style>
+</head>
+<body class="print">
+   <h1 class="leccion">6. Herramientas digitales</h1>
+   <div class="lectura"> 
+    <p class="noPrint">
+     <a href="print.html" target="_blank" rel="noopener">Versión para
+      imprimir.</a>
+    </p>
+   </div>
+<div class="lectura">
+ <p>
+  En esta lección se presentan herramientas digitales para el diseño gráfico.
+ </p>
+ <nav>
+  <h1>Contenido</h1>
+  
+   <ol type="A">
+    <li>
+     <p>
+      <a href="/m06herramientas/mAhardware.html">Hardware</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m06herramientas/mBsoftware.html">Software</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m06herramientas/mCentorno.html">Herramientas del entorno</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m06herramientas/mDcalibracion.html">Calibración de colores</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m06herramientas/mEpaletaC.html">Paletas de colores</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m06herramientas/mFcapas.html">Capas</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m06herramientas/mGformas.html">Formas</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m06herramientas/mHtrazos.html">Trazos</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m06herramientas/mIvectores.html">Vectores</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m06herramientas/mJfiltros.html">Filtros</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m06herramientas/mKmascaras.html">Máscaras</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m06herramientas/mLefectos.html">Efectos</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m06herramientas/mMformatos.html">Formatos de salida</a>
+     </p>
+    </li>
+   </ol>
+ </nav>
+</div>
+     <section >
+         <h1 >A. Hardware</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>Una buena computadora.</p>
+   <ul>
+    <li>
+     <p>Sistema operativo Macintosh o Windows.</p>
+     <figure>
+      <picture>
+       <source
+         srcset="/img/m06herramientas/windows10-640.webp"
+         media="(max-width: 640px)">
+       <img alt="Windows" src="/img/m06herramientas/windows10-1920.webp">
+      </picture>
+      <figcaption>Microsoft Windows 10</figcaption>
+     </figure>
+     <figure>
+      <picture>
+       <source
+         srcset="/img/m06herramientas/macos-640.webp"
+         media="(max-width: 640px)">
+       <img alt="macOS" src="/img/m06herramientas/macos-1152.webp">
+      </picture>
+      <figcaption>macOS de Apple</figcaption>
+     </figure>
+    </li>
+    <li>
+     <p>
+      De preferencia SSD mínimo de 512 GB o HDD mínimo de 750 GB y 7200 RPM.
+     </p>
+     <figure>
+      <img alt="SSD"
+        src="/img/m06herramientas/pexels-luis-quintero-2942361.jpg">
+      <figcaption>
+       Solid State Disk -
+       <a target="_blank" rel="nooper"
+         href="https://www.pexels.com/es-es/foto/tecnologia-ordenador-dispositivo-disco-duro-6429162/">Foto
+        de <strong>Luis Quintero</strong> en <strong>Pexels</strong></a>
+      </figcaption>
+     </figure>
+     <figure>
+      <img alt="HDD"
+        src="/img/m06herramientas/pexels-sergei-starostin-6429162.jpg">
+      <figcaption>
+       Hard Drive Disk -
+       <a target="_blank" rel="nooper"
+         href="https://www.pexels.com/es-es/foto/samsung-ssd-portatil-t5-2942361/">Foto
+        de <strong>Sergei Starostin</strong> en <strong>Pexels</strong></a>
+      </figcaption>
+     </figure>
+    </li>
+    <li>
+     <p>
+      Cuando también se manejan videos y se necesita mucho almacenamiento
+      y/o velocidad, se recomienda un RAID (Arreglo redundante de discos
+      independientes). Se reparten los datos entre varios discos para trabajar
+      más rápido y soportar fallas de los discos duros.
+     </p>
+     <figure>
+      <img alt="RAID"
+        src="/img/m06herramientas/1087px-HuaweiRH2288HV2.jpg">
+      <figcaption>
+       Redundant Array of Independent Disks -
+       De Open Grid Scheduler / Grid Engine - Trabajo propio, CC0,
+       <a href="https://commons.wikimedia.org/w/index.php?curid=38267117"
+         target="_blank"
+         rel="nooper">https://commons.wikimedia.org/w/index.php?curid=38267117</a>
+      </figcaption>
+     </figure>
+    </li>
+    <li>
+     <p>
+      Unidad de procesamiento gráfica (GPU), NVIDIA o RADEON.
+     </p>
+     <figure>
+      <img alt="GPU NVIDIA"
+        src="/img/m06herramientas/nvidia rtx 3080.webp">
+      <figcaption>
+       Tarjeta de Video Gigabyte GeForce RTX 3080 TI 12GB GDDR6X
+      </figcaption>
+     </figure>
+     <figure>
+      <img alt="GPU RADEON"
+        src="/img/m06herramientas/readoen pro w6800.webp">
+      <figcaption>
+       Tarjeta gráfica Radeon™ PRO W6800
+      </figcaption>
+     </figure>
+    </li>
+    <li>
+     <p>Procesador con mínimo de 4 núcleos y 1 GHz de velocidad.</p>
+     <figure>
+      <source
+        srcset="/img/m06herramientas/pexels-pok-rie-1432673-640.webp"
+        media="(max-width: 640px)">
+      <img class="med" alt="CPU montado en tarjeta madre"
+        src="/img/m06herramientas/pexels-pok-rie-1432673-1920.webp">
+      <figcaption>
+       <small>
+        <a href="https://www.pexels.com/es-es/foto/fotografia-de-enfoque-selectivo-de-la-placa-base-1432673/"
+          target="_blank" rel="noopener">Foto de <strong>Pok Rie</strong> en
+         <strong>Pexels</strong></a>
+       </small>
+      </figcaption>
+     </figure>
+    </li>
+    <li>
+     <p>Ram mínimo 16 GB.</p>
+     <figure>
+      <source
+        srcset="/img/m06herramientas/pexels-valentine-tanasovich-2588757-640.webp"
+        media="(max-width: 640px)">
+      <img class="med" alt="Memoria montada en tarjeta madre"
+        src="/img/m06herramientas/pexels-valentine-tanasovich-2588757-640.webp">
+      <figcaption>
+       <a href="https://www.pexels.com/es-es/foto/placa-base-de-computadora-negra-y-gris-2588757/"
+         target="_blank" rel="noopener">Foto de <strong>Valentine
+         Tanasovich</strong> en <strong>Pexels</strong></a>
+      </figcaption>
+     </figure>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <p>Monitor (no tv) 4K con toda la gama de colores.</p>
+   <figure>
+    <img alt="Monitor"
+      src="/img/m06herramientas/pexels-shvets-production-8972802.jpg">
+    <figcaption>
+     <a target="_blank" rel="nooper"
+       href="https://www.pexels.com/es-es/foto/mujer-ordenador-mirando-sonriente-8972802/">Foto
+      de <strong>SHVETS production</strong> en <strong>Pexels</strong></a>
+    </figcaption>
+   </figure>
+  </li>
+  <li>
+   <p>
+    Tarjeta digitalizadora. Un lienzo con un lápiz para escribir. Algunas usan
+    una pantalla en vez de lienzo. También hay tabletas con lápiz integrado.
+   </p>
+   <figure>
+    <img alt="Tarjeta digitalizadora"
+      src="/img/m06herramientas/pexels-ketut-subiyanto-4474047.jpg">
+    <figcaption>
+     <a target="_blank" rel="nooper"
+       href="https://www.pexels.com/es-es/foto/mujer-cafe-taza-escritorio-4474047/">Foto
+      de <strong>Ketut Subiyanto</strong> en <strong>Pexels</strong></a>
+    </figcaption>
+   </figure>
+  </li>
+  <li>
+   <p>Escáners.</p>
+   <figure>
+    <img alt="Escaneando"
+      src="/img/m06herramientas/pexels-andrea-piacquadio-3831873.jpg">
+    <figcaption>
+     <a target="_blank" rel="nooper"
+       href="https://www.pexels.com/es-es/foto/grave-oficinista-con-impresora-en-el-lugar-de-trabajo-3831873/">Foto
+      de <strong>Andrea Piacquadio</strong> en <strong>Pexels</strong></a>
+    </figcaption>
+   </figure>
+  </li>
+  <li>
+   <p>Cámaras fotográficas.</p>
+   <figure>
+    <img alt="Escaneando"
+      src="/img/m06herramientas/pexels-karolina-grabowska-4491445.jpg">
+    <figcaption>
+     <a target="_blank" rel="nooper"
+       href="https://www.pexels.com/es-es/foto/mujer-camara-oficina-fotografia-4491445/">Foto
+      de <strong>Karolina Grabowska</strong> en <strong>Pexels</strong></a>
+    </figcaption>
+   </figure>
+  </li>
+ </ul>
+ <ul>
+  <li>
+   <p>
+    <small>
+     Fuente del texto:
+     <a href="https://www.esdesignbarcelona.com/actualidad/diseno-grafico/hardware-para-diseno-grafico-elementos-que-necesita-un-disenador-grafico#:~:text=Un%20buen%20procesador,y%201%20GHz%20de%20velocidad."
+       target="_blank"
+       rel="nooper">https://www.esdesignbarcelona.com/actualidad/diseno-grafico/hardware-para-diseno-grafico-elementos-que-necesita-un-disenador-grafico#:~:text=Un%20buen%20procesador,y%201%20GHz%20de%20velocidad.</a>
+    </small>
+   </p>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >B. Software</h1><div class="lectura">
+ <section>
+  <h1>Editores de imágenes de bits</h1>
+  <ul>
+   <li>
+    <p>Adobe Photoshop.</p>
+    <figure>
+     <img alt="Adobe photoshop"
+       src="/img/m06herramientas/photoshop.png">
+    </figure>
+   </li>
+   <li>
+    <p>
+     Photopea en
+     <a target="_blank" rel="nooper"
+       href="https://www.photopea.com/">https://www.photopea.com/</a>.
+    </p>
+    <figure>
+     <img alt="Photopea"
+       src="/img/m06herramientas/photopea.png">
+    </figure>
+   </li>
+   <li>
+    <p>GIMP.</p>
+    <figure>
+     <img alt="GIMP"
+       src="/img/m06herramientas/GIMP_2.10.jpg">
+     <figcaption>
+      De The GIMP Team -
+      <a href="https://www.gimp.org/release-notes/gimp-2.10.html"
+        target="_blank"
+        rel="nooper">https://www.gimp.org/release-notes/gimp-2.10.html</a>, CC
+      BY-SA 4.0,
+      <a href="https://commons.wikimedia.org/w/index.php?curid=68762474"
+        target="_blank"
+        rel="nooper">https://commons.wikimedia.org/w/index.php?curid=68762474</a>
+     </figcaption>
+    </figure>
+   </li>
+  </ul>
+ </section>
+ <section>
+  <h1>Editores de imágenes vectores</h1>
+  <ul>
+   <li>
+    <p>Adobe Illiustrator.</p>
+    <figure>
+     <img alt="Adobe Illiustrator"
+       src="/img/m06herramientas/Portada-illustrator-805x452.jpg">
+     <figcaption>
+      <a href="https://www.educadictos.com/virtudes-de-adobe-illustrator/"
+        target="_blank"
+        rel="nooper">https://www.educadictos.com/virtudes-de-adobe-illustrator/</a>
+     </figcaption>
+    </figure>
+   </li>
+   <li>
+    <p>Editor de dibujos de Google Drive.</p>
+    <figure>
+     <img alt="Dibujos de Google"
+       src="/img/m06herramientas/Dibujo de Google.png">
+     <figcaption>
+      <a target="_blank" rel="nooper"
+        href="https://drive.google.com/">https://drive.google.com/</a>
+     </figcaption>
+    </figure>
+   </li>
+   <li>
+    <p>Inkscape.</p>
+    <figure>
+     <img alt="Inkscape"
+       src="/img/m06herramientas/inkscape.png">
+     <figcaption>
+      Imagen de Sonia Bennett CC 3.0
+      <a target="_blank" rel="nooper"
+        href="https://inkscape.org/~SoniaB/%E2%98%85overlay">https://inkscape.org/~SoniaB/%E2%98%85overlay</a>
+     </figcaption>
+    </figure>
+   </li>
+  </ul>
+ </section>
+</div>
+      </section>
+     <section >
+         <h1 >C. Herramientas del entorno</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>Paint.</p>
+   <figure>
+     <img alt="Paint"
+       src="/img/m06herramientas/Paint.png">
+   </figure>
+  </li>
+  <li>
+   <p>Fax y Escaner de Windows.</p>
+   <figure>
+     <img alt="Fax y Escaner de Windows"
+       src="/img/m06herramientas/escanners.png">
+   </figure>
+  </li>
+  <li>
+   <p>Herramienta recortes (Recorte y anotación).</p>
+   <figure>
+     <img alt="Herramienta recortes"
+       src="/img/m06herramientas/recortes.png">
+   </figure>
+  </li>
+  <li>
+   <p>Cámara.</p>
+   <figure>
+     <img alt="Cámara"
+       src="/img/m06herramientas/camara.png">
+   </figure>
+  </li>
+  <li>
+   <p>Fotos.</p>
+   <figure>
+     <img alt="Fotos"
+       src="/img/m06herramientas/fotos.png">
+   </figure>
+  </li>
+  <li>
+   <p>Paint 3D.</p>
+   <figure>
+    <img alt="Paint 3D"
+      src="/img/m06herramientas/paint 3D.png">
+  </figure>
+ </li>
+  <li>
+   <p>Visor 3D.</p>
+   <figure>
+    <img alt="Visor 3D"
+      src="/img/m06herramientas/visor 3D.png">
+  </figure>
+ </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >D. Calibración de colores</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    El proceso de calibrar la pantalla nos sirve para obtener unos colores en el
+    monitor lo más parecido posible a los que podemos ver con nuestros ojos,
+    para ello haremos uso de un software específico que nos permitirá, mediante
+    la regulación de los colores primarios (rojo, verde y azul), el brillo y
+    contraste, modificar los ajustes de color para acercarnos lo máximo posible
+    a la realidad.
+   </p>
+  </li>
+  <li>
+   <p>
+    Para entornos profesionales el proceso de calibración se realiza para
+    obtener unos colores impresos tal y como los estamos viendo en pantalla, en
+    estos casos es más recomendable realizar estos ajustes mediante instrumentos
+    de hardware como un espectrómetro o colorímetro, estos son mucho más
+    precisos, pero también mucho más costosos.
+   </p>
+  </li>
+  <li>
+   <p>
+    Veamos cómo usar la utilidad de Windows 10 para calibrar la pantalla.
+   </p>
+  </li>
+  <li>
+   <p>
+    Antes de realizar estos ajustes, sería muy recomendable tener el monitor
+    encendido el tiempo suficiente para que coja la temperatura ideal de
+    trabajo, además tendremos que restablecer los ajustes del monitor a valores
+    de fábrica para no interferir en la calibración. En Windows, sería ideal no
+    tener habilitado ninguna configuración especial que interfiera en los
+    colores, como Luz nocturna.
+   </p>
+  </li>
+ </ul>
+ <section>
+  <h1>Cómo calibrar la pantalla con la herramienta integrada en Windows 10</h1>
+  <ol>
+   <li>
+    <p>
+     En primer lugar, tendremos que abrir la utilidad de calibración de pantalla
+     de Windows 10, para ello podemos escribir calibración en la lupa o hacer
+     clic con el botón derecho en cualquier parte de la pantalla y seleccionamos
+     Configuración de pantalla.
+    </p>
+    <figure>
+     <img alt="Calibración 1"
+       src="/img/m06herramientas/calibracion1.webp">
+    </figure>
+   </li>
+   <li>
+    <p>
+     Un poco más abajo tendremos la opción de Configuración de pantalla
+     avanzada.
+    </p>
+    <figure>
+     <img alt="Calibración 2"
+       src="/img/m06herramientas/calibracion2.webp">
+    </figure>
+   </li>
+   <li>
+    <p>
+     Ahora hacemos clic en Mostrar las propiedades de adaptador de pantalla 1.
+    </p>
+    <figure>
+     <img alt="Calibración 3"
+       src="/img/m06herramientas/calibracion3.webp">
+    </figure>
+   </li>
+   <li>
+    <p>
+     Vamos a la pestaña Administración del color y hacemos clic en el botón
+     Administración del color...
+    </p>
+    <figure>
+     <img alt="Calibración 4"
+       src="/img/m06herramientas/calibracion4.webp">
+    </figure>
+   </li>
+   <li>
+    <p>
+     Se abrirá la ventana Administración del color y vamos a la pestaña Opciones
+     avanzadas.
+    </p>
+    <figure>
+     <img alt="Calibración 5"
+       src="/img/m06herramientas/calibracion5.webp">
+    </figure>
+   </li>
+   <li>
+    <p>
+     Ahora hacemos clic en Calibrar pantalla para abrir la herramienta de
+     calibración de color de la pantalla de Windows 10. De esta manera dejaremos
+     abierto también la herramenta de Administración del color para poder ver el
+     nuevo perfil una vez finalizado.
+    </p>
+    <figure>
+     <img alt="Calibración 6"
+       src="/img/m06herramientas/calibracion6.webp">
+    </figure>
+   </li>
+   <li>
+    <p>
+     Se abrirá la herramienta de calibración de color de la pantalla y hacemos
+     clic en siguiente para comenzar, veremos un aviso que nos indicará lo que
+     anteriormente advertimos, será necesario restablecer los ajustes a fábrica
+     de los valores del monitor. Cómo también será necesario tener abiertos el
+     OSD con los ajustes del monitor, sería recomendable ponerlo en una posición
+     que no nos moleste.
+    </p>
+    <figure>
+     <img alt="Calibración 7"
+       src="/img/m06herramientas/calibracion7.webp">
+    </figure>
+   </li>
+   <li>
+    <p>
+     Comenzaremos ajustando el valor de gamma, tendemos que ajustar la barra de
+     la izquierda para ajustar la imagen como en la muestra central. Si no
+     estamos satisfechos con el resultado, podemos hacer clic en Restablecer si
+     queremos comenzar de nuevo.
+    </p>
+    <figure>
+     <img alt="Calibración 8"
+       src="/img/m06herramientas/calibracion8.webp">
+    </figure>
+    <figure>
+     <img alt="Calibración 8.5"
+       src="/img/m06herramientas/calibracion8_5.webp">
+    </figure>
+   </li>
+   <li>
+    <p>
+     Ahora tendremos que ajustar el brillo para que sea lo más parecido a la
+     imagen central, en este caso tendremos que hacer uso de los ajustes del
+     monitor para aumentar o reducir el brillo y conseguir distinguir la camisa,
+     de la chaqueta y de la X del fondo.
+    </p>
+    <figure>
+     <img alt="Calibración 9"
+       src="/img/m06herramientas/calibracion9.webp">
+    </figure>
+    <figure>
+     <img alt="Calibración 9.5"
+       src="/img/m06herramientas/calibracion9_5.webp">
+    </figure>
+   </li>
+   <li>
+    <p>
+     Lo siguiente será ajustar el contraste, haciendo uso de los ajustes del
+     monitor tendremos que aumentar el contraste al valor máximo sin que dejemos
+     de ver los botones y arrugas de la camisa. Si no podemos verlos con la
+     configuración actual, tendremos que bajar el contraste hasta conseguirlo.
+    </p>
+    <figure>
+     <img alt="Calibración 10"
+       src="/img/m06herramientas/calibracion9.webp">
+    </figure>
+    <figure>
+     <img alt="Calibración 10.5"
+       src="/img/m06herramientas/calibracion9_5.webp">
+    </figure>
+   </li>
+   <li>
+    <p>
+     El siguiente paso nos ayudará a corregir los colores dominantes para
+     obtener
+     una escala de grises neutros, podemos mirar los ejemplos para hacernos una
+     idea de que color bajar o subir según veamos la escala en nuestra pantalla.
+    </p>
+    <figure>
+     <img alt="Calibración 11"
+       src="/img/m06herramientas/calibracion11.webp">
+    </figure>
+    <figure>
+     <img alt="Calibración 11.5"
+       src="/img/m06herramientas/calibracion11_5.webp">
+    </figure>
+   </li>
+   <li>
+    <p>
+     Una vez completada la calibración, podemos ver los ajustes anteriores y
+     compararlos con los actuales haciendo clic en el botón Calibración anterior
+     y Calibración actual. Si no nos gusta el resultado, podemos volver a
+     realizar la calibración y establecer otros valores.
+    </p>
+    <figure>
+     <img alt="Calibración 12"
+       src="/img/m06herramientas/calibracion12.webp">
+    </figure>
+   </li>
+  </ol>
+ </section>
+ <section>
+  <h1>Cómo optimizar el texto con ClearType</h1>
+  <ul>
+   <li>
+    <p>
+     Una vez finalizada la calibración de pantalla con la herramienta integrada
+     de Windows 10, podemos darle una vuelta de tuerca más haciendo que el texto
+     sea más fácil de leer en pantalla. Desde la herramienta de calibración de
+     pantalla, al terminar, nos ofrece la posibilidad de iniciar esta utilidad
+     llamada Optimizador de texto ClearType, que es muy recomendable usar.
+    </p>
+   </li>
+   <li>
+    <p>
+     Si dejamos marcada la casilla y pulsamos en finalizar, se abrirá
+     automáticamente al cerrar la utilidad de calibración de pantalla, veamos
+     que sencillo es ver el texto más nítido y claro en pantalla.
+    </p>
+   </li>
+  </ul>
+  <ol>
+   <li>
+    <p>
+     Pulsamos en siguiente para iniciar el Optimizador de texto ClearType.
+    </p>
+    <figure>
+     <img alt="Clear Type 1"
+       src="/img/m06herramientas/cleartype1.webp">
+    </figure>
+   </li>
+   <li>
+    <p>
+     Comprobará que estamos en la resolución nativa del monitor para una mejor
+     experiencia.
+    </p>
+    <figure>
+     <img alt="Clear Type 2"
+       src="/img/m06herramientas/cleartype2.webp">
+    </figure>
+   </li>
+   <li>
+    <p>
+     Ahora simplemente tendremos que seleccionar la muestra que mejor se vea en
+     las 5 ventanas que nos ofrecen con opciones.
+    </p>
+    <figure>
+     <img alt="Clear Type 3"
+       src="/img/m06herramientas/cleartype3.webp">
+    </figure>
+    <figure>
+     <img alt="Clear Type 3.5"
+       src="/img/m06herramientas/cleartype3_5.webp">
+    </figure>
+   </li>
+   <li>
+    <p>
+     Al seleccionar estas 5 muestras, nos optimizará el texto para mostrarlo mas
+     suave y mejor de manera automática, solo tenemos que hacer clic en
+     Finalizar para terminar.
+    </p>
+    <figure>
+     <img alt="Clear Type 4"
+       src="/img/m06herramientas/cleartype4.webp">
+    </figure>
+   </li>
+  </ol>
+ </section>
+ <section>
+  <h1>Como descargar e instalar perfiles en Windows 10</h1>
+  <ul>
+   <li>
+    <p>
+     Además podemos descargar pefiles ya configurados y añadirlos para usarlos
+     en situaciones concretas. Todos los fabricantes de monitores tienen a
+     disposición de sus usuarios los perfiles de los monitores que venden, por
+     lo que sería ideal descargar el perfil e instalarlo para disponer de una
+     configuración óptima de color.
+    </p>
+   </li>
+   <li>
+    <p>
+     En ocasiones el resultado de los perfiles del fabricante no es el esperado,
+     por lo que podemos realizar los ajustes de color usando la utilidad de
+     calibración de pantalla de Windows 10 como explicamos anteriormente o
+     podemos usar perfiles ya creados que podemos descargar de internet.
+    </p>
+    <figure>
+     <img alt="Perfil 0"
+       src="/img/m06herramientas/perfil0.webp">
+    </figure>
+   </li>
+   <li>
+    <p>
+     Para añadir un perfil descargado lo haremos desde la misma ventana de
+     Administración del color, para acceder a ella si la hemos cerrado, podemos
+     escribir color en la lupa de Windows 10 y hacemos clic en Administración
+     del color.
+    </p>
+   </li>
+  </ul>
+  <ol>
+   <li>
+    <p>
+     En Dispositivo debemos seleccionar el monitor que queremos aplicar el
+     perfil descargado.
+    </p>
+    <figure>
+     <img alt="Perfil 1"
+       src="/img/m06herramientas/perfil1.webp">
+    </figure>
+   </li>
+   <li>
+    <p>
+     Debemos tener marcada la opción Usar mi configuración para este
+     dispositivo.
+    </p>
+    <figure>
+     <img alt="Perfil 2"
+       src="/img/m06herramientas/perfil2.webp">
+    </figure>
+   </li>
+   <li>
+    <p>
+     Ahora hacemos clic en el botón Agregar...
+    </p>
+    <figure>
+     <img alt="Perfil 3"
+       src="/img/m06herramientas/perfil3.webp">
+    </figure>
+   </li>
+   <li>
+    <p>
+     Si queremos usar un perfil que ya tengamos en nuestro equipo, lo
+     seleccionamos de la lista de perfiles ICC.
+    </p>
+    <figure>
+     <img alt="Perfil 4"
+       src="/img/m06herramientas/perfil4.webp">
+    </figure>
+   </li>
+   <li>
+    <p>
+     Si lo que queremos es añadir uno nuevo que hayamos descargado hacemos clic
+     en Examinar... para buscarlo en nuestro equipo y hacemos clic en Agregar.
+    </p>
+    <figure>
+     <img alt="Perfil 5"
+       src="/img/m06herramientas/perfil5.webp">
+    </figure>
+   </li>
+   <li>
+    <p>
+     Ahora aparecerá en la lista de perfiles asociados a este monitor, para
+     activarlo debemos hacer clic en el botón Establecer como perfil
+     predeterinado.
+    </p>
+    <figure>
+     <img alt="Perfil 6"
+       src="/img/m06herramientas/perfil6.webp">
+    </figure>
+   </li>
+  </ol>
+  <ul>
+   <li>
+    <p>
+     Ahora ya tenemos activo el perfil que hemos descargado para funcionar con
+     él.
+    </p>
+   </li>
+  </ul>
+ </section>
+ <section>
+  <h1>Calibrar la pantalla o aplicar perfiles para todos los usuarios</h1>
+  <ul>
+   <li>
+    <p>
+     Tenemos que recordar que la configuración de estos perfiles se almacena
+     individualmente para cada usuario que tengamos en nuestro PC, si
+     compartimos el ordenador con otras personas y queremos aplicar los cambios
+     para todos los usuarios, tendemos que Cambiar los valores predeterminados
+     del sistema.
+    </p>
+    <figure>
+     <img alt="Aplicar 1"
+       src="/img/m06herramientas/aplicar1.webp">
+    </figure>
+   </li>
+   <li>
+    <p>
+     Para esto, y desde la ventana de Administración del color vamos a la
+     pestaña de Opciones avanzadas, abajo del todo tenemos la opción Cambiar los
+     valores predeterminados del sistema... y si hacemos clic en ella, abriremos
+     la ventana Valores predeterimnados del sistema de administración del color,
+     en la que de manera similar a como lo hemos hecho antes, podemos Agregar un
+     perfil, Establecerlo como predeterminado, o en la pestaña de Opciones
+     avanzadas podemos calibrar la pantalla. No olvides marcar la casilla Usar
+     calibración de pantalla de Windows 10 para realizar la calibración.
+    </p>
+    <figure>
+     <img alt="Aplicar 2"
+       src="/img/m06herramientas/aplicar2.webp">
+    </figure>
+   </li>
+   <li>
+    <p>
+     Realizados estos cambios modificaremos la configuración de Windows y
+     quedarán disponibles para todos los usuarios que tengamos activos, ideal si
+     compartimos el equipo en un entorno de trabajo donde la representación real
+     de los colores supone una ventaja para nuestro día a dia, aunque para
+     entornos profesionales lo ideal es usar un espectrómetro o colorímetro,
+     crear un perfil específico con los colores reales y habilitarlo para todos
+     los usuarios.
+    </p>
+   </li>
+  </ul>
+ </section>
+ <ul>
+  <li>
+   <p>
+    <small>
+     Fuente:
+     <a href="https://www.geeknetic.es/Guia/1787/Como-calibrar-la-pantalla-en-Windows-10.html#:~:text=Vamos%20a%20la%20pesta%C3%B1a%20Administraci%C3%B3n,la%20pantalla%20de%20Windows%2010."
+       target="_blank"
+       rel="nooper">https://www.geeknetic.es/Guia/1787/Como-calibrar-la-pantalla-en-Windows-10.html#:~:text=Vamos%20a%20la%20pesta%C3%B1a%20Administraci%C3%B3n,la%20pantalla%20de%20Windows%2010.</a>
+    </small>
+   </p>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >E. Paletas de colores</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Una paleta de colores es un conjunto de colores que combinan bien. Las
+    paletas de colores a menudo se usan para diseñar algo con una apariencia
+    consistente. Las paletas de colores son utilizadas por diseñadores de
+    logotipos, diseñadores gráficos, ilustradores, desarrolladores web y otros
+    artistas. Una buena paleta de colores es fundamental para el diseño visual
+    profesional.
+   </p>
+  </li>
+  <li>
+   <p>
+    Una paleta de colores a menudo se diseña a mano. A menudo depende de un
+    diseñador o artista experimentado elegir colores que combinen bien. A través
+    de años de trabajar con diferentes colores, tienen experiencia para saber
+    qué
+    colores funcionan bien juntos y son estéticamente agradables. Aun así,
+    elegir
+    una gran paleta de colores puede ser difícil. Afortunadamente, los
+    algoritmos
+    informáticos pueden ayudar con eso.
+   </p>
+  </li>
+  <li>
+   <p>
+    En este enlace tenemos un generador de paletas
+    <a href="https://mybrandnewlogo.com/es/generador-de-paleta-de-colores"
+      target="_blank"
+      rel="nooper">https://mybrandnewlogo.com/es/generador-de-paleta-de-colores</a>
+   </p>
+  </li>
+  <li>
+   <p>
+    <small>
+     Fuente:
+     <a href="https://mybrandnewlogo.com/es/generador-de-paleta-de-colores"
+       target="_blank"
+       rel="nooper">https://mybrandnewlogo.com/es/generador-de-paleta-de-colores</a>
+    </small>
+   </p>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >F. Capas</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Las herramientas gráficas permiten agregar distintos tipos de elementos
+    gráficos como son:
+   </p>
+   <ul>
+    <li>
+     <p>Rectángulos</p>
+    </li>
+    <li>
+     <p>Elipses</p>
+    </li>
+    <li>
+     <p>Polígonos</p>
+    </li>
+    <li>
+     <p>Líneas</p>
+    </li>
+    <li>
+     <p>Trazos</p>
+    </li>
+    <li>
+     <p>Textos</p>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <p>
+    A cada elemento gráfico se le conoce como capa y puede tapar a otros
+    elementos.
+   </p>
+  </li>
+  <li>
+   <p>
+    Las capas de nivel superior tapan a las capas de nivel inferior.
+   </p>
+  </li>
+  <li>
+   <p>
+    Las herramientas permieten aplicar efectos a cada capa, así como aumentar o
+    disminuír su nivel.
+   </p>
+  </li>
+  <li>
+   <p>
+    Las capas también se pueden agrupar y separar.
+   </p>
+  </li>
+ </ul>
+</div>
+<figure>
+ <img class="med" alt="Ejemplo de capas" src="/img/m06herramientas/capas.svg">
+</figure>
+<section class="lectura noPrint">
+ <h1>Videos</h1>
+ <ul>
+  <li>
+   <p>
+    <a href="https://drive.google.com/file/d/1uTNa7JjC4sFrrVn5akTKtXVYbRTMei4m/view?usp=sharing"
+      rel="nooper"
+      target="_blank">Enlace a un video de como instalar Photopea en tu
+     computadora.</a>
+   </p>
+  </li>
+  <li>
+   <p>
+    <a href="https://drive.google.com/file/d/1BrXrdyMym_Ru71a6OkcipFhdQSTpyiBM/view?usp=sharing"
+      rel="nooper"
+      target="_blank">Enlace a un video sobre manejo de capas en Photopea.</a>
+   </p>
+  </li>
+ </ul>
+</section>
+      </section>
+     <section >
+         <h1 >G. Formas</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Las herramientas gráficas permiten agregar distintas formas arbitrarias y
+    textos.
+   </p>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >H. Trazos</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Las herramientas gráficas permiten realizar trazos a mano libre y por
+    segmentos parabólicos.
+   </p>
+  </li>
+ </ul>
+</div>
+<figure>
+ <img alt="Creación de trazos" src="/img/m06herramientas/Trazos.gif">
+</figure>
+      </section>
+     <section >
+         <h1 >I. Vectores</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Las herramientas gráficas permiten agregar distintos tipos de formas
+    geométricas que se pueden construir con formulas y facilmente pueden
+    modificar su tamaño, como son:
+   </p>
+   <ul>
+    <li>
+     <p>Rectángulos</p>
+    </li>
+    <li>
+     <p>Elipses</p>
+    </li>
+    <li>
+     <p>Polígonos</p>
+    </li>
+    <li>
+     <p>Líneas</p>
+    </li>
+   </ul>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >J. Filtros</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Los filtros son fórmulas matemáticas que se agregan a los elementos gráficos
+    y permiten:
+   </p>
+   <ul>
+    <li>
+     <p>Reducir cambios bruscos en las imágenes.</p>
+    </li>
+    <li>
+     <p>Resaltar bordes</p>
+    </li>
+   </ul>
+  </li>
+ </ul>
+</div>
+<figure>
+ <img alt="Creación de filtros" src="/img/m06herramientas/filtros.gif">
+</figure>
+      </section>
+     <section >
+         <h1 >K. Máscaras</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Las máscaras permiten ocultar partes de un elemento gráfico.
+   </p>
+  </li>
+ </ul>
+</div>
+<figure>
+ <img alt="Creación de máscaras" src="/img/m06herramientas/Mascaras.gif">
+</figure>
+      </section>
+     <section >
+         <h1 >L. Efectos</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Los efectos pueden ser:
+   </p>
+   <ul>
+    <li>
+     <p>Difuminados</p>
+    </li>
+    <li>
+     <p>Brillos</p>
+    </li>
+    <li>
+     <p>Reflejos</p>
+    </li>
+   </ul>
+  </li>
+ </ul>
+</div>
+<figure>
+ <img alt="Creación de efectos" src="/img/m06herramientas/Efectos.gif">
+</figure>
+      </section>
+     <section >
+         <h1 >M. Formatos de salida</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Aparte de los formatos propietarios de las herremientas, por ejemplo el psd,
+    hay otros formatos que se usan entre muchas más herramientas con ciertas
+    características especiales.
+   </p>
+  </li>
+  <dl>
+   <dt><dfn>jpeg</dfn></dt>
+   <dt><dfn>jpg</dfn></dt>
+   <dd>
+    <ul>
+     <li>
+      <p>Joint Photographic Experts Group</p>
+     </li>
+     <li>
+      <p>
+       Un formato viejo, pero muy extendido que maneja pixeles y se adapta bien
+       a fotografías e imágenes realistas.
+      </p>
+     </li>
+    </ul>
+   </dd>
+   <dt><dfn>gif</dfn></dt>
+   <dd>
+    <ul>
+     <li>
+      <p>Graphic Interchange Format</p>
+     </li>
+     <li>
+      <p>
+       Un formato viejo, pero muy extendido que maneja pixeles y se adapta
+       bien a dibujos creados con herramientas gráficas que manejan
+       transparencias. También permite animaciones.
+      </p>
+     </li>
+    </ul>
+   </dd>
+   <dt><dfn>png</dfn></dt>
+   <dd>
+    <ul>
+     <li>
+      <p>Portable Network Graphics</p>
+     </li>
+     <li>
+      <p>
+       Un formato un poco más moderno y muy extendido que maneja pixeles y se
+       adapta bien a dibujos creados con herramientas gráficas que manejan
+       transparencias. También permite animaciones.
+      </p>
+     </li>
+    </ul>
+   </dd>
+   <dt><dfn>webp</dfn></dt>
+   <dd>
+    <ul>
+     <li>
+      <p>Portable Network Graphics</p>
+     </li>
+     <li>
+      <p>
+       Un formato moderno con pixeles y mucha compresión, muy adecuado para la
+       web.
+      </p>
+     </li>
+    </ul>
+   </dd>
+   <dt><dfn>svg</dfn></dt>
+   <dd>
+    <ul>
+     <li>
+      <p>Scalable Vector Graphics</p>
+     </li>
+     <li>
+      <p>
+       Un dtd de sgml o xml (archivo de texto con etiquetas) que representa
+       figuras geométricas y rutas vectorizadas que facilmente puede adaptarse a
+       distintos tamaños sin perder resolución.
+      </p>
+     </li>
+    </ul>
+   </dd>
+  </dl>
+</div>
+<section>
+ <h1>Ejemplo de SVG</h1>
+ <div class="horizontal">
+  <section>
+   <h1>Salida</h1>
+   <figure>
+    <img class="med" alt="Ejemplo de svg"
+      src="/img/m06herramientas/ejemplo_svg.svg">
+   </figure>
+  </section>
+  <section>
+   <h1>Código</h1>
+   <muestra-codigo>
+    <div>
+     <div><span style="color: #800000;">&lt;svg</span> <span
+        style="color: #ff0000;">version</span>=<span
+        style="color: #0000ff;">"1.2"</span></div>
+     <div>&nbsp;<span style="color: #ff0000;">xmlns</span>=<span
+        style="color: #0000ff;">"http://www.w3.org/2000/svg"</span></div>
+     <div>&nbsp;<span style="color: #ff0000;">viewBox</span>=<span
+        style="color: #0000ff;">"0 0 640 480"</span> <span
+        style="color: #ff0000;">width</span>=<span
+        style="color: #0000ff;">"640"</span></div>
+     <div>&nbsp;<span style="color: #ff0000;">height</span>=<span
+        style="color: #0000ff;">"480"</span><span
+        style="color: #800000;">&gt;</span></div>
+     <div>&nbsp;<span
+        style="color: #800000;">&lt;title&gt;</span>ejemplo svg<span
+        style="color: #800000;">&lt;/title&gt;</span></div>
+     <div>&nbsp;<span style="color: #800000;">&lt;style&gt;</span></div>
+     <div>&nbsp; .s0 { fill: #ff0000 } </div>
+     <div>&nbsp; .s1 {</div>
+     <div>&nbsp; &nbsp;fill: #00ff00;</div>
+     <div>&nbsp; &nbsp;stroke: #0000ff;</div>
+     <div>&nbsp; &nbsp;stroke-width: 8 } </div>
+     <div>&nbsp; .s2 { fill: #ff00ff } </div>
+     <div>&nbsp;<span style="color: #800000;">&lt;/style&gt;</span></div>
+     <div>&nbsp;<span style="color: #800000;">&lt;rect</span> <span
+        style="color: #ff0000;">id</span>=<span
+        style="color: #0000ff;">"Forma 1"</span> <span
+        style="color: #ff0000;">class</span>=<span
+        style="color: #0000ff;">"s0"</span></div>
+     <div>&nbsp; <span style="color: #ff0000;">x</span>=<span
+        style="color: #0000ff;">"57"</span> <span
+        style="color: #ff0000;">y</span>=<span
+        style="color: #0000ff;">"213"</span> <span
+        style="color: #ff0000;">width</span>=<span
+        style="color: #0000ff;">"443"</span></div>
+     <div>&nbsp; <span style="color: #ff0000;">height</span>=<span
+        style="color: #0000ff;">"146"</span> <span
+        style="color: #ff0000;">rx</span>=<span
+        style="color: #0000ff;">"10"</span><span
+        style="color: #800000;">&gt;&lt;/rect&gt;</span></div>
+     <div>&nbsp;<span style="color: #800000;">&lt;ellipse</span> <span
+        style="color: #ff0000;">id</span>=<span
+        style="color: #0000ff;">"Forma 2"</span> <span
+        style="color: #ff0000;">class</span>=<span
+        style="color: #0000ff;">"s1"</span></div>
+     <div>&nbsp; <span style="color: #ff0000;">cx</span>=<span
+        style="color: #0000ff;">"261"</span> <span
+        style="color: #ff0000;">cy</span>=<span
+        style="color: #0000ff;">"164"</span> <span
+        style="color: #ff0000;">rx</span>=<span
+        style="color: #0000ff;">"104"</span></div>
+     <div>&nbsp; <span style="color: #ff0000;">ry</span>=<span
+        style="color: #0000ff;">"91"</span><span
+        style="color: #800000;">/&gt;</span></div>
+     <div>&nbsp;<span style="color: #800000;">&lt;path</span> <span
+        style="color: #ff0000;">id</span>=<span
+        style="color: #0000ff;">"Capa 1"</span> <span
+        style="color: #ff0000;">class</span>=<span
+        style="color: #0000ff;">"s2"</span></div>
+     <div>&nbsp; <span style="color: #ff0000;">d</span>=<span
+        style="color: #0000ff;">"m456 161.2l-125.1</span></div>
+     <div><span
+        style="color: #0000ff;">&nbsp; &nbsp;74.2l-1.8-145.5z"</span><span
+        style="color: #800000;">/&gt;</span></div>
+     <div><span style="color: #800000;">&lt;/svg&gt;</span></div>
+    </div>
+   </muestra-codigo>
+  </section>
+ </div>
+</section>
+      </section>
+</body>
+</html>
